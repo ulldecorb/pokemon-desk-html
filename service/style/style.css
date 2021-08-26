@@ -1,0 +1,135 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+.back-color {
+    height: 100vh;
+    width: 100vw;
+    background-color: #FFF;
+    position: fixed;
+    top:0px;
+    left:0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    z-index: -1;
+}
+
+.back-color__middle{
+    height: 10%;
+    width: 100vw;
+    background-color: #000;
+}
+
+.back-color__bottom{
+    height: 45%;
+    width: 100vw;
+    background-color: darkred;
+}
+
+.main-title {
+    opacity: 0;
+    color: darkred;
+    font-size: 3em;
+}
+
+.pokemon-navigator {
+    display: flex;
+}
+
+.pokemon-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    list-style:none;
+    cursor: pointer;
+}
+
+.pokemon-list {
+    height: 200px;
+    width: 175px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pokemon-item:hover {
+    color:gold;
+}
+
+.pokemon-item__image {
+    height: 125px;
+    width: 125px;
+    /* margin:auto 3vw; */
+    border-style: solid;
+    border-width: 8px;
+    border-radius: 50%;
+    background-color: gainsboro;
+    border: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+    transition-duration: 0.4s;
+}
+
+.pokemon-item__image:hover {
+    height: 175px;
+    width: 175px;
+    background-color: gold;
+}
+
+.pokemon-item__name {
+    height: 20px;
+    width: 125px;
+    color: red;
+    text-transform: uppercase;
+    opacity: 1;
+}
+
+.pokemon-item__name:hover {
+    opacity: 1;
+    color:gold;
+}
+
+.pokemon-button {
+    height: 175px;
+    width: 40px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-icon {
+    height: 40px;
+    width: 40px;
+}
+
+.button-icon:nth-child(1) {
+    margin-left:60px;
+}
+
+.button-icon__upLeft-downRigth {
+    height: 20px;
+    width: 20px;
+    background-color: red;
+    transform: skewX(40deg);
+}
+
+.button-icon__downLeft-upRigth {
+    height: 20px;
+    width: 20px;
+    background-color: red;
+    transform: skewX(-40deg);
+}
