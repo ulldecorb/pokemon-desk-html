@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./service/style/style.css">
+    <link href="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/1024px-Pok%C3%A9_Ball_icon.svg.png" rel="icon" type="image/png">
+    <title>Pokemon</title>
+</head>
+<body>
+    <div class="back-color">
+        <div class="back-color__middle"></div>
+        <div class="back-color__bottom"></div>
+    </div>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/269px-International_Pok%C3%A9mon_logo.svg.png" alt="icon of pokemon" class="icon">
+    <h1 class="main-title">POKEMONS</h1>
+    <div class="pokemon-navigator">
+        <button type="button" class="pokemon-button"
+        onclick="backPagination()">
+            <div class="button-icon">
+                <div class="button-icon__downLeft-upRigth"></div>
+                <div class="button-icon__upLeft-downRigth"></div>
+            </div>
+        </button>
+        <ul class="pokemon-box" id="pokemon-item"></ul>
+        <button type="button" class="pokemon-button"
+        onclick="forwardPagination()">
+            <div class="button-icon">
+                <div class="button-icon__upLeft-downRigth"></div>
+                <div class="button-icon__downLeft-upRigth"></div>
+            </div>
+        </button>
+    </div>
+</body>
+<script src="./service/main.js"></script>
+</html>
