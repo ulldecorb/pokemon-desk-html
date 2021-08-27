@@ -1,6 +1,7 @@
-const url = 'https://pokeapi.co/api/v2/pokemon/' ;
 // const url = 'https://rickandmortyapi.com/api/character/' ;
 // src="${data.image}" 
+
+const url = 'https://pokeapi.co/api/v2/pokemon/' ;
 let pokemonId = 25;
 const pokeBox = document.getElementById('pokemon-item');
 setPokemonBox(pokemonId);
@@ -10,12 +11,12 @@ async function pokemon(pokemonId) {
     const data = await resp.json();
     console.log(data);
     let pokeIndex = pokemonId
-        const li = document.createElement("LI")
-        li.innerHTML = 
-        `
-        <img class="pokemon-item__image" 
-            src="${data.sprites.front_default}" 
-            alt="image of ${data.name}">
+    const li = document.createElement("LI")
+    li.innerHTML = 
+    `
+    <img class="pokemon-item__image" 
+    src="${data.sprites.front_default}" 
+    alt="image of ${data.name}">
         <h2 class="pokemon-item__name">
             ${data.name}
         </h2>
