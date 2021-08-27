@@ -20,10 +20,10 @@ async function pokemon(pokemonId) {
         <h2 class="pokemon-item__name">
             ${data.name}
         </h2>
-        `;
-        li.setAttribute("class","pokemon-list");
-        pokeBox.appendChild(li);
-        pokeIndex += 1;
+    `;
+    li.setAttribute("class","pokemon-list");
+    pokeBox.appendChild(li);
+    pokeIndex += 1;
 };
 
 function setPokemonBox(pokemonId) {
