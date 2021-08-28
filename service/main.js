@@ -4,19 +4,27 @@
 const url = 'https://pokeapi.co/api/v2/pokemon/' ;
 const pokeBox = document.getElementById('pokemon-item');
 let pokemonId = 25;
+let totalPokemons = 898;
 setPokemonBox(pokemonId);
 
 
+// getTotalPokemon();
+// async function getTotalPokemon() {
+//     const resp = await fetch(`${ url }`);
+//     const data = await resp.json();
+//     totalPokemons = data;
+//     console.log('data.length: ' , totalPokemons)
+// };
 
 async function getPokemon( pokemonId, listPosition ) {
     const resp = await fetch(`${ url }${ pokemonId }`);
     const data = await resp.json();
     document.getElementById(`pokemon-place__${ listPosition }`).innerHTML = 
     `
-    <img class="pokemon-item__image" 
+    <img class="list__image" 
     src="${ data.sprites.front_default }" 
     alt="image of ${ data.name }">
-    <h2 class="pokemon-item__name">
+    <h2 class="list__name">
     ${`#${ pokemonId } ${ data.name }`}
     </h2>
     `;
