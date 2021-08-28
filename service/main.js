@@ -1,50 +1,53 @@
-// const url = 'https://rickandmortyapi.com/api/character/' ;
+// const url = 'https://rickandmortyapi.com/api/character/';
 // src="${data.image}" 
 
 const url = 'https://pokeapi.co/api/v2/pokemon/' ;
-let pokemonId = 25;
 const pokeBox = document.getElementById('pokemon-item');
+let pokemonId = 25;
 setPokemonBox(pokemonId);
 
-async function pokemon(pokemonId) {
-    const resp = await fetch(`${url}${pokemonId}`);
+
+
+async function getPokemon( pokemonId, listPosition ) {
+    const resp = await fetch(`${ url }${ pokemonId }`);
     const data = await resp.json();
-    console.log(data);
-    let pokeIndex = pokemonId
-    const li = document.createElement("LI")
-    li.innerHTML = 
+    document.getElementById(`pokemon-place__${ listPosition }`).innerHTML = 
     `
     <img class="pokemon-item__image" 
-    src="${data.sprites.front_default}" 
-    alt="image of ${data.name}">
-        <h2 class="pokemon-item__name">
-            ${data.name}
-        </h2>
+    src="${ data.sprites.front_default }" 
+    alt="image of ${ data.name }">
+    <h2 class="pokemon-item__name">
+    ${`#${ pokemonId } ${ data.name }`}
+    </h2>
     `;
-    li.setAttribute("class","pokemon-list");
-    pokeBox.appendChild(li);
-    pokeIndex += 1;
 };
 
 function setPokemonBox(pokemonId) {
     let x = pokemonId;
     x < 1 && (x = 1);
-    pokemon(x);
-    pokemon(x += 1);
-    pokemon(x += 2);
-    pokemon(x += 3);
+    getPokemon(x, 1);
+    getPokemon(x += 1, 2);
+    getPokemon(x += 1, 3);
+    getPokemon(x += 1, 4);
 }
 
 function backPagination() {
-    pokemonId -= 4;
-    pokeBox.innerHTML = '';
+    pokemonId > 0 && (pokemonId -= 4);
+    pokemonId <= 0 && (pokemonId = 1);
+    resetpokemonList();
     setPokemonBox(pokemonId);
 }
 
 function forwardPagination() {
     pokemonId += 4;
-    pokeBox.innerHTML = '';
+    resetpokemonList();
     setPokemonBox(pokemonId);
+}
+
+function resetpokemonList() {
+    for (let i = 1; i < 5; i++) {
+        document.getElementById(`pokemon-place__${ i }`).innerHTML = '';
+    }
 }
 
 
