@@ -43,11 +43,13 @@ body {
 }
 
 .pokemon-box {
+    height: 175px;
+    width: 700px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    list-style:none;
+    list-style: none;
     cursor: pointer;
 }
 
@@ -61,13 +63,12 @@ body {
 }
 
 .pokemon-item:hover {
-    color:gold;
+    color:blue;
 }
 
 .pokemon-item__image {
     height: 125px;
     width: 125px;
-    /* margin:auto 3vw; */
     border-style: solid;
     border-width: 8px;
     border-radius: 50%;
@@ -89,7 +90,9 @@ body {
 .pokemon-item__name {
     height: 20px;
     width: 125px;
+    font-size: 1.2em;
     color: red;
+    text-align: center;
     text-transform: uppercase;
     opacity: 1;
 }
@@ -110,6 +113,10 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+/* .pokemon-button:hover {
+    background-color: orange;
+ } */
 
 .button-icon {
     height: 40px;
