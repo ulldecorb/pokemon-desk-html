@@ -8,13 +8,13 @@ let totalPokemons = 898;
 setPokemonBox(pokemonId);
 
 
-// getTotalPokemon();
-// async function getTotalPokemon() {
-//     const resp = await fetch(`${ url }`);
-//     const data = await resp.json();
-//     totalPokemons = data;
-//     console.log('data.length: ' , totalPokemons)
-// };
+getTotalPokemon();
+async function getTotalPokemon() {
+    const resp = await fetch(`${ url }25`);
+    const data = await resp.json();
+    totalPokemons = data;
+    console.log('data.length: ' , totalPokemons)
+};
 
 async function getPokemon( pokemonId, listPosition ) {
     const resp = await fetch(`${ url }${ pokemonId }`);
@@ -22,7 +22,7 @@ async function getPokemon( pokemonId, listPosition ) {
     document.getElementById(`pokemon-place__${ listPosition }`).innerHTML = 
     `
     <img class="list__image" 
-    src="${ data.sprites.front_default }" 
+    src="${ data.sprites.other.dream_world.front_default }" 
     alt="image of ${ data.name }">
     <h2 class="list__name">
     ${`#${ pokemonId } ${ data.name }`}
