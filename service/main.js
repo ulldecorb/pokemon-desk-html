@@ -66,6 +66,7 @@ async function getPokemonDetail (id) {
     const data = await resp.json();
     const detailElement = document.createElement( "SECTION" );
     detailElement.setAttribute("class", 'pokemon-detail' );
+    detailElement.setAttribute("id", 'pokemon-detail' );
     detailElement.innerHTML = `
     <h2>${data.name}</h2>
     ${data.types[0].type.name}
@@ -80,7 +81,12 @@ async function getPokemonDetail (id) {
     src="${ data.sprites.versions["generation-v"]["black-white"].animated.front_shiny }" 
     alt="pixel image of ${ data.name }">
     `;
+    detailElement.addEventListener("click", () => removeDetail());
     document.getElementsByClassName("pokemon-navigator")[0].insertAdjacentElement( "afterend", detailElement );
+
 } 
 
+function removeDetail () {
+    document.body.removeChild(document.getElementById("pokemon-detail"));
+}
 
