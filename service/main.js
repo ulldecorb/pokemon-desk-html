@@ -78,6 +78,12 @@ async function getPokemonDetail (id) {
     src="${ data.sprites.other["official-artwork"].front_default }" 
     alt="pixel image of ${ data.name }">
     <img class="detail__image" 
+    src="${ data.sprites.versions["generation-iii"].emerald.front_default }" 
+    alt="pixel image of ${ data.name }">
+    <img class="detail__image" 
+    src="${ data.sprites.versions["generation-iv"]["diamond-pearl"].front_default }" 
+    alt="pixel image of ${ data.name }">
+    <img class="detail__image" 
     src="${ data.sprites.versions["generation-v"]["black-white"].animated.front_shiny }" 
     alt="pixel image of ${ data.name }">
     `;
