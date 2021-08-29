@@ -50,7 +50,6 @@ body {
     align-items: center;
     text-align: center;
     list-style: none;
-    cursor: pointer;
 }
 
 .pokemon-list {
@@ -60,6 +59,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
     margin: 0 20px;
 }
 
@@ -92,11 +92,18 @@ body {
     text-align: center;
     text-transform: uppercase;
     opacity: 1;
+    margin: auto;
 }
 
 .list__name:hover {
     opacity: 1;
     color:gold;
+}
+
+.list-button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
 }
 
 .pokemon-button {
@@ -139,3 +146,15 @@ body {
     background-color: red;
     transform: skewX(-40deg);
 }
+
+.pokemon-detail {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(65, 9, 9, 0.7);
+    z-index: 10;
+}
+
