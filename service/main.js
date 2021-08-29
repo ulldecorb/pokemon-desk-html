@@ -4,6 +4,7 @@
 const url = 'https://pokeapi.co/api/v2/pokemon/' ;
 const pokeBox = document.getElementById('pokemon-item');
 let pokemonId = 25;
+let pokemonDetailId = 25;
 let totalPokemons = 898;
 setPokemonBox(pokemonId);
 
@@ -13,7 +14,7 @@ async function getTotalPokemon() {
     const resp = await fetch(`${ url }25`);
     const data = await resp.json();
     totalPokemons = data;
-    console.log('data.length: ' , totalPokemons)
+    console.log('pikachu-atributes: ' , totalPokemons)
 };
 
 async function getPokemon( pokemonId, listPosition ) {
@@ -21,12 +22,14 @@ async function getPokemon( pokemonId, listPosition ) {
     const data = await resp.json();
     document.getElementById(`pokemon-place__${ listPosition }`).innerHTML = 
     `
-    <img class="list__image" 
-    src="${ data.sprites.other.dream_world.front_default }" 
-    alt="image of ${ data.name }">
-    <h2 class="list__name">
-    ${`#${ pokemonId } ${ data.name }`}
-    </h2>
+    <button type="button" class="list-button" onclick="getPokemonDetail(${pokemonId})">
+        <img class="list__image" 
+            src="${ data.sprites.other.dream_world.front_default }" 
+            alt="image of ${ data.name }">
+        <h2 class="list__name">
+            ${`#${ pokemonId }<br>${ data.name }`}
+        </h2>
+    </buton>
     `;
 };
 
@@ -54,10 +57,30 @@ function forwardPagination() {
 
 function resetpokemonList() {
     for (let i = 1; i < 5; i++) {
-        document.getElementById(`pokemon-place__${ i }`).innerHTML = '';
+        document.getElementById( `pokemon-place__${ i }` ).innerHTML = '';
     }
 }
 
-
+async function getPokemonDetail (id) {
+    const resp = await fetch(`${ url }${ id }`);
+    const data = await resp.json();
+    const detailElement = document.createElement( "SECTION" );
+    detailElement.setAttribute("class", 'pokemon-detail' );
+    detailElement.innerHTML = `
+    <h2>${data.name}</h2>
+    ${data.types[0].type.name}
+  
+    <img class="detail__image" 
+    src="${ data.sprites.other.dream_world.front_default }" 
+    alt="image of ${ data.name }">
+    <img class="detail__image" 
+    src="${ data.sprites.other["official-artwork"].front_default }" 
+    alt="pixel image of ${ data.name }">
+    <img class="detail__image" 
+    src="${ data.sprites.versions["generation-v"]["black-white"].animated.front_shiny }" 
+    alt="pixel image of ${ data.name }">
+    `;
+    document.getElementsByClassName("pokemon-navigator")[0].insertAdjacentElement( "afterend", detailElement );
+} 
 
 
