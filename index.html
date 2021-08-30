@@ -37,6 +37,12 @@
             </div>
         </button>
     </div>
+    <label for="index">index:
+    </label>
+
+        <input type="number" id="index" name="index" min="1" max="898">
+        <input type="button" onclick="getPokemonDetail( `${Number.parseInt(document.getElementById('index').value, 10)}` )" value="search index pokemon">
+    
 </body>
 <script src="./service/main.js"></script>
 </html>

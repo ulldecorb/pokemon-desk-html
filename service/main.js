@@ -11,7 +11,7 @@ setPokemonBox(pokemonId);
 
 getTotalPokemon();
 async function getTotalPokemon() {
-    const resp = await fetch(`${ url }25`);
+    const resp = await fetch(`${ url }3`);
     const data = await resp.json();
     totalPokemons = data;
     console.log('pikachu-atributes: ' , totalPokemons)
@@ -68,31 +68,43 @@ async function getPokemonDetail (id) {
     detailElement.setAttribute("class", 'pokemon-detail' );
     detailElement.setAttribute("id", 'pokemon-detail' );
     detailElement.innerHTML = `
-    <h2>${data.name}</h2>
-    ${data.types[0].type.name}
-  
-    <img class="detail__image" 
-    src="${ data.sprites.other.dream_world.front_default }" 
-    alt="image of ${ data.name }">
-    <img class="detail__image" 
-    src="${ data.sprites.other["official-artwork"].front_default }" 
-    alt="pixel image of ${ data.name }">
-    <img class="detail__image" 
-    src="${ data.sprites.versions["generation-iii"].emerald.front_default }" 
-    alt="pixel image of ${ data.name }">
-    <img class="detail__image" 
-    src="${ data.sprites.versions["generation-iv"]["diamond-pearl"].front_default }" 
-    alt="pixel image of ${ data.name }">
-    <img class="detail__image" 
-    src="${ data.sprites.versions["generation-v"]["black-white"].animated.front_shiny }" 
-    alt="pixel image of ${ data.name }">
+    
+    <section class="detail-sprites">
+    <h2 class="detail-name">${data.name.toUpperCase()}</h2>
+    <h3 class="detail-types">
+    ${data.types.map((item) => item.type.name).join("<br>")}
+    </h3>
+    <h3 class="detail-abilities">
+    ${data.abilities.map((item) => item.ability.name).join("<br>")}
+    </h3>
+            <div class="detail-sprites__main">
+                <img class="detail__image" 
+                src="${ data.sprites.other["official-artwork"].front_default }" 
+                alt="pixel image of ${ data.name }">
+            </div>
+            <div class="detail-sprites__versions">
+                <img class="detail__image"
+                src="${ data.sprites.versions["generation-iii"].emerald.front_default }" 
+                alt="pixel image of ${ data.name }">
+                <img class="detail__image" 
+                src="${ data.sprites.versions["generation-iv"]["diamond-pearl"].front_default }" 
+                alt="pixel image of ${ data.name }">
+                <img class="detail__image" 
+                src="${ data.sprites.versions["generation-v"]["black-white"].animated.front_shiny }" 
+                alt="pixel image of ${ data.name }">
+            </div>
+        </section>
     `;
     detailElement.addEventListener("click", () => removeDetail());
     document.getElementsByClassName("pokemon-navigator")[0].insertAdjacentElement( "afterend", detailElement );
-
 } 
 
 function removeDetail () {
     document.body.removeChild(document.getElementById("pokemon-detail"));
+}
+
+function setIndex(index) {
+    pokemonId = Number.parseInt(index,10);
+    setPokemonBox(pokemonId);
 }
 

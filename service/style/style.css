@@ -156,5 +156,35 @@ body {
     left: 0px;
     background-color: rgba(65, 9, 9, 0.7);
     z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
+.detail-sprites {
+    border-radius: 30px;
+    background-color: burlywood;
+    height: 90vh;
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+    text-align: center;
+}
+
+.detail-sprites__main {
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    
+}
+
+.detail-sprites__versions {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
