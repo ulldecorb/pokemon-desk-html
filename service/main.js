@@ -71,12 +71,14 @@ async function getPokemonDetail (id) {
     
     <section class="detail-sprites">
     <h2 class="detail-name">${data.name.toUpperCase()}</h2>
+    <div class="detail-sprite__info">
     <h3 class="detail-types">
     ${data.types.map((item) => item.type.name).join("<br>")}
     </h3>
     <h3 class="detail-abilities">
     ${data.abilities.map((item) => item.ability.name).join("<br>")}
     </h3>
+    </div>
             <div class="detail-sprites__main">
                 <img class="detail__image" 
                 src="${ data.sprites.other["official-artwork"].front_default }" 
