@@ -29,13 +29,12 @@ async function getPokemon( pokemonId, listPosition ) {
         <h2 class="list__name">
             ${`#${ pokemonId }<br>${ data.name }`}
         </h2>
-    </buton>
+    </button>
     `;
 };
 
 function setPokemonBox(pokemonId) {
     let x = pokemonId;
-    x < 1 && (x = 1);
     getPokemon(x, 1);
     getPokemon(x += 1, 2);
     getPokemon(x += 1, 3);
@@ -44,13 +43,14 @@ function setPokemonBox(pokemonId) {
 
 function backPagination() {
     pokemonId > 0 && (pokemonId -= 4);
-    pokemonId <= 0 && (pokemonId = 1);
+    pokemonId <= 0 && (pokemonId = 895);
     resetpokemonList();
     setPokemonBox(pokemonId);
 }
 
 function forwardPagination() {
-    pokemonId += 4;
+    pokemonId < 896 && (pokemonId += 4);
+    pokemonId >= 896 && (pokemonId = 1);
     resetpokemonList();
     setPokemonBox(pokemonId);
 }
@@ -70,32 +70,32 @@ async function getPokemonDetail (id) {
     detailElement.innerHTML = `
     
     <section class="detail-sprites">
-    <h2 class="detail-name">${data.name.toUpperCase()}</h2>
-    <div class="detail-sprite__info">
-    <h3 class="detail-types">
-    ${data.types.map((item) => item.type.name).join("<br>")}
-    </h3>
-    <h3 class="detail-abilities">
-    ${data.abilities.map((item) => item.ability.name).join("<br>")}
-    </h3>
-    </div>
-            <div class="detail-sprites__main">
-                <img class="detail__image" 
-                src="${ data.sprites.other["official-artwork"].front_default }" 
-                alt="pixel image of ${ data.name }">
-            </div>
-            <div class="detail-sprites__versions">
-                <img class="detail__image"
+        <h2 class="detail-name">${data.name.toUpperCase()}</h2>
+        <div class="detail-sprite__info">
+            <h3 class="detail-types">
+                ${data.types.map((item) => item.type.name).join("<br>")}
+            </h3>
+            <h3 class="detail-abilities">
+                ${data.abilities.map((item) => item.ability.name).join("<br>")}
+            </h3>
+        </div>
+        <div class="detail-sprites__main">
+            <img class="detail__image" 
+            src="${ data.sprites.other["official-artwork"].front_default }" 
+            alt="pixel image of ${ data.name }">
+        </div>
+        <div class="detail-sprites__versions">
+            <img class="detail__image"
                 src="${ data.sprites.versions["generation-iii"].emerald.front_default }" 
                 alt="pixel image of ${ data.name }">
-                <img class="detail__image" 
+            <img class="detail__image" 
                 src="${ data.sprites.versions["generation-iv"]["diamond-pearl"].front_default }" 
                 alt="pixel image of ${ data.name }">
-                <img class="detail__image" 
+            <img class="detail__image" 
                 src="${ data.sprites.versions["generation-v"]["black-white"].animated.front_shiny }" 
                 alt="pixel image of ${ data.name }">
-            </div>
-        </section>
+        </div>
+    </section>
     `;
     detailElement.addEventListener("click", () => removeDetail());
     document.getElementsByClassName("pokemon-navigator")[0].insertAdjacentElement( "afterend", detailElement );
@@ -110,3 +110,15 @@ function setIndex(index) {
     setPokemonBox(pokemonId);
 }
 
+
+
+
+
+
+
+
+
+function setPokemonByInput (stringId) {
+    let numId = Number.parseInt( stringId , 10)
+    setIndex(numId);
+}
