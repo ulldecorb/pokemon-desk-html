@@ -71,7 +71,7 @@ async function getPokemonDetail (id) {
     
     <section class="detail-sprites">
         <div class="detail-sprites__info">
-            <h2 class="detail-sprites__name">${data.name.toUpperCase()}</h2>
+            <h2 class="detail-sprites__name">#${pokemonId}-${data.name.toUpperCase()}</h2>
             <h3 class="detail-types">
                 ${data.types.map((item) => item.type.name).join("<br>")}
             </h3>
