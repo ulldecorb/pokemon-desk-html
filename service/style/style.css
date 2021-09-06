@@ -251,17 +251,18 @@ body {
       align-content: center;
 }
 
-.detail-sprites__detail-sprites__info {
+.detail-sprites .detail-sprites__info {
   height: 100%;
   width: 50%;
+  border: 2px solid red;
 }
 
-.detail-sprites__detail-sprites__info__name {
+.detail-sprites .detail-sprites__info__name {
   color: darkred;
   font-size: 2em;
 }
 
-.detail-sprites__detail-sprites__info__info {
+.detail-sprites .detail-sprites__info__info {
   width: 100%;
   height: 40px;
   display: -webkit-box;
@@ -293,10 +294,12 @@ body {
 .detail-sprites__sprites-box .sprites-box__main {
   max-height: 60%;
   max-width: 100%;
+  border: 2px solid red;
 }
 
 .detail-sprites__sprites-box .sprites-box__versions {
   width: 100%;
+  height: 40%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -307,6 +310,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  border: 2px solid red;
 }
 
 .search {
