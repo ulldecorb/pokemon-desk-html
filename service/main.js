@@ -70,8 +70,8 @@ async function getPokemonDetail (id) {
     detailElement.innerHTML = `
     
     <section class="detail-sprites">
-        <h2 class="detail-name">${data.name.toUpperCase()}</h2>
-        <div class="detail-sprite__info">
+        <div class="detail-sprites__info">
+            <h2 class="detail-sprites__name">${data.name.toUpperCase()}</h2>
             <h3 class="detail-types">
                 ${data.types.map((item) => item.type.name).join("<br>")}
             </h3>
@@ -79,21 +79,23 @@ async function getPokemonDetail (id) {
                 ${data.abilities.map((item) => item.ability.name).join("<br>")}
             </h3>
         </div>
-        <div class="detail-sprites__main">
-            <img class="detail__image" 
-            src="${ data.sprites.other["official-artwork"].front_default }" 
-            alt="pixel image of ${ data.name }">
-        </div>
-        <div class="detail-sprites__versions">
-            <img class="detail__image"
-                src="${ data.sprites.versions["generation-iii"].emerald.front_default }" 
+        <div class="detail-sprites__sprites-box">
+            <div class="sprites-box__main">
+                <img class="detail__image" 
+                src="${ data.sprites.other["official-artwork"].front_default }" 
                 alt="pixel image of ${ data.name }">
-            <img class="detail__image" 
-                src="${ data.sprites.versions["generation-iv"]["diamond-pearl"].front_default }" 
-                alt="pixel image of ${ data.name }">
-            <img class="detail__image" 
-                src="${ data.sprites.versions["generation-v"]["black-white"].animated.front_shiny }" 
-                alt="pixel image of ${ data.name }">
+            </div>
+            <div class="sprites-box__versions">
+                <img class="detail__image"
+                    src="${ data.sprites.versions["generation-iii"].emerald.front_default }" 
+                    alt="pixel image of ${ data.name }">
+                <img class="detail__image" 
+                    src="${ data.sprites.versions["generation-iv"]["diamond-pearl"].front_default }" 
+                    alt="pixel image of ${ data.name }">
+                <img class="detail__image" 
+                    src="${ data.sprites.versions["generation-v"]["black-white"].animated.front_shiny }" 
+                    alt="pixel image of ${ data.name }">
+            </div>
         </div>
     </section>
     `;
@@ -105,20 +107,17 @@ function removeDetail () {
     document.body.removeChild(document.getElementById("pokemon-detail"));
 }
 
-function setIndex(index) {
-    pokemonId = Number.parseInt(index,10);
+// function setIndex(index) {
+//     pokemonId = Number.parseInt(index,10);
+//     setPokemonBox(pokemonId);
+// }
+
+function setPokemonByInput(stringId) {
+    pokemonId = Number.parseInt(stringId,10);
     setPokemonBox(pokemonId);
 }
 
-
-
-
-
-
-
-
-
-function setPokemonByInput (stringId) {
-    let numId = Number.parseInt( stringId , 10)
-    setIndex(numId);
-}
+// function setPokemonByInput (stringId) {
+//     let numId = Number.parseInt( stringId , 10)
+//     setIndex(numId);
+// }

@@ -1,3 +1,7 @@
+* {
+    font-family: monospace;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -6,11 +10,10 @@ body {
     overflow: hidden;
 }
 
-
 .back-color {
     height: 100vh;
     width: 100vw;
-    background-color: #FFF;
+    background: radial-gradient(orange 5%, darkred 70% , rgb(56, 12, 12) );
     position: fixed;
     top:0px;
     left:0px;
@@ -18,18 +21,19 @@ body {
     flex-direction: column;
     justify-content: flex-end;
     z-index: -1;
-}
-
-.back-color__middle{
-    height: 10%;
-    width: 100vw;
-    background-color: #000;
-}
-
-.back-color__bottom{
-    height: 45%;
-    width: 100vw;
-    background-color: darkred;
+    
+    &__middle{
+        height: 10%;
+        width: 100vw;
+        background-color: #000;
+    }
+    
+    &__bottom{
+        height: 45%;
+        width: 100vw;
+        background: radial-gradient(#FFF 5%, rgb(189, 186, 186) 70% );
+        border-top: 1vh solid rgb(216, 216, 216);
+    }
 }
 
 .main-title {
@@ -40,6 +44,8 @@ body {
 
 .pokemon-navigator {
     display: flex;
+    position: absolute;
+    top: 34.5vh;
 }
 
 .pokemon-box {
@@ -167,53 +173,79 @@ body {
     height: 90vh;
     width: 70vw;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-content: center;
-    text-align: center;
-}
-
-.detail-sprites__main {
-    flex-direction: row;
+    flex-direction: row-reverse;
     justify-content: center;
     align-content: center;
+    // text-align: center;
     
-}
+    &__detail-sprites__info {
+        height: 100%;
+        width: 50%;
+        
+        &__name {
+            color: darkred;
+            font-size: 2em;
+        }
 
-.detail-sprites__versions {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center; 
-}
-
-.detail-sprite__info {
-    width: 100%;
-    height: 40px;
+        &__info {
+            width: 100%;
+            height: 40px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center; 
+        }
+    }
     
-    display: flex;
-    flex-direction: row;
-    justify-content: center; 
+    &__sprites-box {
+        height: 100%;
+        width: 50%;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+        
+        .sprites-box {
+
+            &__main {
+                max-height: 60%;
+                max-width: 100%
+            }
+            
+            &__versions {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: center; 
+            }
+        }
+    }
+    
 }
 
 .search {
-    height: 5vh;
-    width: 25vw;
-    border-radius: 10vh;
-    background-color: floralwhite;
+    height: 5vw;
+    width: 5vw;
+    border-radius: 50%;
+    border: 1vh solid #000;
+    background-color: darkred;
+    position: absolute;
+    top: 75vh;
+    left: 48.5vw;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-
+    
     &__input {
+        height: 5vw;
+        width: 5vw;
         border: none;
+        border-radius: 50%;
         color:indianred;
     }
 
     &__button {
         border: none;
         background-color: transparent;
-        color: indianred;
+        color: rgb(231, 219, 44);
     }
 }
