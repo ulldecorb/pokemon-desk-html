@@ -71,28 +71,40 @@ async function getPokemonDetail (id) {
     
     <section class="detail-sprites">
         <div class="detail-sprites__info">
-            <h2 class="detail-sprites__name">#${pokemonId}-${data.name.toUpperCase()}</h2>
+            <h2 class="detail-sprites__name">#${data.id}-${data.name.toUpperCase()}</h2>
             <h3 class="detail-types">
-                ${data.types.map((item) => item.type.name).join("<br>")}
+                TYPE: ${data.types.map((item) => item.type.name).join("<br>")}
             </h3>
             <h3 class="detail-abilities">
-                ${data.abilities.map((item) => item.ability.name).join("<br>")}
+                ABILITIES: ${data.abilities.map((item) => item.ability.name).join("<br>")}
+            </h3>
+            <h3>
+                HEIGHT: ${data.height /= 10}m
+            </h3>
+            <h3>
+                WEIGHT: ${data.weight}kg
+            </h3>
+            <h3>
+            </h3>
+            <h3>
+            </h3>
+            <h3>
             </h3>
         </div>
         <div class="detail-sprites__sprites-box">
-            <div class="sprites-box__main">
-                <img class="detail__image" 
+            <div class="sprites-box__artwork">
+                <img class="artwork__image" 
                 src="${ data.sprites.other["official-artwork"].front_default }" 
                 alt="pixel image of ${ data.name }">
             </div>
-            <div class="sprites-box__versions">
-                <img class="detail__image"
+            <div class="sprites-box__versions"> 
+                <img class="sprites-box__image"
                     src="${ data.sprites.versions["generation-iii"].emerald.front_default }" 
                     alt="pixel image of ${ data.name }">
-                <img class="detail__image" 
+                <img class="sprites-box__image" 
                     src="${ data.sprites.versions["generation-iv"]["diamond-pearl"].front_default }" 
                     alt="pixel image of ${ data.name }">
-                <img class="detail__image" 
+                <img class="sprites-box__image" 
                     src="${ data.sprites.versions["generation-v"]["black-white"].animated.front_shiny }" 
                     alt="pixel image of ${ data.name }">
             </div>
