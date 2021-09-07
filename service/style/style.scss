@@ -171,31 +171,40 @@ body {
     border-radius: 30px;
     background-color: burlywood;
     height: 90vh;
-    width: 70vw;
+    max-width: 70vw;
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
     align-content: center;
+    
+    overflow: hidden;
     // text-align: center;
     
-    .detail-sprites__info {
+    &__info {
         height: 100%;
         width: 50%;
-        border: 2px solid red;
-        box-sizing: border-box;
-        
-        &__name {
-            color: darkred;
-            font-size: 2em;
+        margin: auto;           
+
+            
+        .info {
+            &__name {
+                color: darkred;
+                font-size: 4vw;
+                text-align: center;            
+            }
+            
+            &__types {                
+                text-align: center;            
+            }
+            
+            &__abilities {
+                text-align: center;            
+            }
         }
 
-        &__info {
-            width: 100%;
-            height: 40px;
-            display: flex;
-            flex-direction: row;
-            justify-content: center; 
-        }
+        h3 {text-align: center;}
+                    
+
     }
     
     &__sprites-box {
@@ -206,48 +215,57 @@ body {
         align-content: center;
         
         .sprites-box {
-
+            
             &__artwork {
                 // padding: 20px;
                 height: 75%;
                 width: 100%;
-                border: 2px solid red;
-                box-sizing: border-box;
+                // border: 2px solid red;
+                // box-sizing: border-box;
                 display: flex;
                 justify-content: center;
                 text-align: center;
+                // background-color: #000;
                 
-
+                background-image: repeating-linear-gradient(90deg, transparent, transparent 50px,
+                rgba(255, 127, 0, 0.25) 50px, rgba(255, 127, 0, 0.25) 56px, transparent 56px, transparent 63px,
+                rgba(255, 127, 0, 0.25) 63px, rgba(255, 127, 0, 0.25) 69px, transparent 69px, transparent 116px,
+                rgba(255, 206, 0, 0.25) 116px, rgba(255, 206, 0, 0.25) 166px),
+                repeating-linear-gradient(0deg, transparent, transparent 50px, rgba(255, 127, 0, 0.25) 50px,
+                rgba(255, 127, 0, 0.25) 56px, transparent 56px, transparent 63px, rgba(255, 127, 0, 0.25) 63px,
+                rgba(255, 127, 0, 0.25) 69px, transparent 69px, transparent 116px, rgba(255, 206, 0, 0.25) 116px,
+                rgba(255, 206, 0, 0.25) 166px),
+                repeating-linear-gradient(-45deg, transparent, transparent 5px, rgba(143, 77, 63, 0.25) 5px,
+                rgba(143, 77, 63, 0.25) 10px),
+                repeating-linear-gradient(45deg, transparent, transparent 5px, rgba(143, 77, 63, 0.25) 5px,
+                rgba(143, 77, 63, 0.25) 10px);
+                
                 .artwork__image {
-                    max-height: 80%;
-                    max-width: 80%;
-                    // // padding: 5%;
+                    max-height: 90%;
+                    max-width: 90%;
                     display: block;
                     margin: auto;
-                    // width: 80%;
                 }
             }
             
             &__versions {
                 width: 100%;
                 height: 25%;
-
+                background-image: repeating-linear-gradient( green, green 0.1vh, transparent 1vh, transparent 2vh),
+                repeating-linear-gradient(90deg, green, green 0.1vh, transparent 1vh, transparent 2vh),repeating-linear-gradient(rgb(24, 24, 26), rgb(24, 24, 26) 5%);
                 display: flex;
                 flex-direction: row;
-                justify-content: center; 
+                justify-content: space-around; 
                 align-items: center;
-                border: 2px solid red;
-                box-sizing: border-box;
-            }
-
-            &__image {
-                height: 100%;
-                width: 33.33%;
-                background-color: forestgreen;
+                
+                .versions__image {
+                    max-height: 100%;
+                    width: 33.33%;
+                    padding: 2%;     
+                }
             }
         }
     }
-    
 }
 
 .search {
