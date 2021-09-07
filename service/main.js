@@ -71,11 +71,11 @@ async function getPokemonDetail (id) {
     
     <section class="detail-sprites">
         <div class="detail-sprites__info">
-            <h2 class="detail-sprites__name">#${data.id}-${data.name.toUpperCase()}</h2>
-            <h3 class="detail-types">
+            <h2 class="info__name">#${data.id}-${data.name.toUpperCase()}</h2>
+            <h3 class="info__types">
                 TYPE: ${data.types.map((item) => item.type.name).join("<br>")}
             </h3>
-            <h3 class="detail-abilities">
+            <h3 class="info__abilities">
                 ABILITIES: ${data.abilities.map((item) => item.ability.name).join("<br>")}
             </h3>
             <h3>
@@ -98,13 +98,13 @@ async function getPokemonDetail (id) {
                 alt="pixel image of ${ data.name }">
             </div>
             <div class="sprites-box__versions"> 
-                <img class="sprites-box__image"
+                <img class="versions__image"
                     src="${ data.sprites.versions["generation-iii"].emerald.front_default }" 
                     alt="pixel image of ${ data.name }">
-                <img class="sprites-box__image" 
+                <img class="versions__image" 
                     src="${ data.sprites.versions["generation-iv"]["diamond-pearl"].front_default }" 
                     alt="pixel image of ${ data.name }">
-                <img class="sprites-box__image" 
+                <img class="versions__image" 
                     src="${ data.sprites.versions["generation-v"]["black-white"].animated.front_shiny }" 
                     alt="pixel image of ${ data.name }">
             </div>
