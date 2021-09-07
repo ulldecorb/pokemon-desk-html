@@ -190,9 +190,13 @@ body {
             &__name {
                 color: darkred;
                 font-size: 4vw;
-                text-align: center;            
+                text-align: center;
+                // font-size: calc(1em + 1vw);
+                // line-height: 1em;
+                // padding: 1em;
+                // margin: 1em;
             }
-            
+
             &__types {                
                 text-align: center;            
             }
