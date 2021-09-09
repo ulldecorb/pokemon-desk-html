@@ -1,6 +1,4 @@
-* {
-    font-family: monospace;
-}
+* {font-family: monospace;}
 
 body {
     display: flex;
@@ -36,123 +34,167 @@ body {
     }
 }
 
-.main-title {
-    opacity: 0;
-    color: darkred;
-    font-size: 3em;
-}
-
-.pokemon-navigator {
-    display: flex;
+.header {
+    height: 20vh;
+    width: 20vw;
     position: absolute;
-    top: 34.5vh;
-}
-
-.pokemon-box {
-    height: 175px;
-    width: 700px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    top: -7vh;
     text-align: center;
-    list-style: none;
-}
 
-.pokemon-list {
-    height: 200px;
-    width: 175px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    margin: 0 20px;
-}
+    &__main-title {
+        opacity: 0;
+    }
 
-.list__image {
-    height: 60vh;
-    width: 125px;
-    border-style: solid;
-    border-width: 8px;
-    border-radius: 5px;
-    background-color: gainsboro;
-    border: 5px solid #000;
-    display: flex;
-    /* flex-direction: column;
-    justify-content: center;
-    align-items: center;   */
-    transition-duration: 0.4s;
-}
-
-.list__image:hover {
-    height: 60vh;
-    width: 175px;
-    background-color: gold;
-    
-    .list__name {
-        color:gold;
+    &__image-pokemon {
+        max-height: 12vh;
+        width: auto;
     }
 }
 
-.list__name {
-    height: 20px;
-    width: 10vw;
-    font-size: 1.2em;
-    color: red;
-    text-align: center;
-    text-transform: uppercase;
-    margin: auto;
-}
-
-.list-button {
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-    margin: -8px;
-}
-
-.pokemon-button {
-    height: 175px;
-    width: 40px;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
+.gallery {
+    height:100vh;
+    width:100vw;
+    // display: none;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    position: absolute;
+    top: 34.5vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+    &__list {
+        height: 100vh;
+        width: 80vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        list-style: none;
+
+        .list {
+            height: 200px;
+            width: 175px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            margin: 0 20px;
+            
+            &__button {
+                border: none;
+                background-color: transparent;
+                cursor: pointer;
+                margin: -8px;
+                border-style: solid;
+                border-width: 8px;
+                border-radius: 5px;
+                background-color: gainsboro;
+                border: 5px solid #000;
+            }
+
+            &__button:hover {
+                background-color: gold;
+            }
+            
+            &__image {
+                height: 60vh;
+                width: 125px;
+                display: flex;
+                transition-duration: 0.4s;
+            }
+            
+            &__image:hover {
+                height: 60vh;
+                width: 175px;
+            }
+            
+            &__name {
+                height: 20px;
+                width: 10vw;
+                font-size: 3vh;
+                color: red;
+                text-align: center;
+                text-transform: uppercase;
+                margin-bottom: 8vh;
+            }
+        }
+    }
+
+    &__navigation-button {
+        height: 100vh;
+        width: 10vw;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        .navigation-button {
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            
+            &__upLeft-downRigth {
+                height: 20px;
+                width: 20px;
+                background-color: red;
+                transform: skewX(40deg);
+            }
+            
+            &__downLeft-upRigth {
+                height: 20px;
+                width: 20px;
+                background-color: red;
+                transform: skewX(-40deg);
+            }
+        }
+        
+        .navigation-button:hover {
+            background-color: goldenrod;
+        }
+    }
+    
+    &__search {
+        height: 5vw;
+        width: 5vw;
+        border-radius: 50%;
+        border: 1vh solid #000;
+        background-color: darkred;
+        position: absolute;
+        top: 75vh;
+        left: 48.5vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        
+        .search {
+            &__input {
+                height: 5vw;
+                width: 5vw;
+                border: none;
+                border-radius: 50%;
+                color:indianred;
+            }
+            
+            &__button {
+                border: none;
+                background-color: transparent;
+                color: rgb(231, 219, 44);
+            }    
+        }
+    }
 }
 
-.button-icon {
-    height: 60px;
-    width: 60px;
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-}
-
-.button-icon:hover {
-    background-color: goldenrod;
-}
-
-.button-icon__upLeft-downRigth {
-    height: 20px;
-    width: 20px;
-    background-color: red;
-    transform: skewX(40deg);
-}
-
-.button-icon__downLeft-upRigth {
-    height: 20px;
-    width: 20px;
-    background-color: red;
-    transform: skewX(-40deg);
-}
-
-.pokemon-detail {
+.detail {
     height: 100vh;
     width: 100vw;
     overflow: hidden;
@@ -165,26 +207,25 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.detail-sprites {
-    border-radius: 30px;
-    background-color: burlywood;
-    height: 90vh;
-    max-width: 70vw;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: center;
-    align-content: center;
     
-    overflow: hidden;
-    // text-align: center;
-    
+    &__box {
+        border-radius: 30px;
+        background-color: burlywood;
+        height: 90vh;
+        max-width: 70vw;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-content: center;
+        
+        overflow: hidden;
+        // text-align: center;
+    }
     &__info {
         height: 100%;
         width: 50%;
         margin: auto;           
-
+    
             
         .info {
             &__name {
@@ -196,7 +237,7 @@ body {
                 // padding: 1em;
                 // margin: 1em;
             }
-
+    
             &__types {                
                 text-align: center;            
             }
@@ -205,20 +246,20 @@ body {
                 text-align: center;            
             }
         }
-
+    
         h3 {text-align: center;}
                     
-
+    
     }
     
-    &__sprites-box {
+    &__sprites {
         height: 100%;
         width: 50%;
         flex-direction: row;
         justify-content: center;
         align-content: center;
         
-        .sprites-box {
+        .sprites {
             
             &__artwork {
                 // padding: 20px;
@@ -272,31 +313,5 @@ body {
     }
 }
 
-.search {
-    height: 5vw;
-    width: 5vw;
-    border-radius: 50%;
-    border: 1vh solid #000;
-    background-color: darkred;
-    position: absolute;
-    top: 75vh;
-    left: 48.5vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
     
-    &__input {
-        height: 5vw;
-        width: 5vw;
-        border: none;
-        border-radius: 50%;
-        color:indianred;
-    }
 
-    &__button {
-        border: none;
-        background-color: transparent;
-        color: rgb(231, 219, 44);
-    }
-}

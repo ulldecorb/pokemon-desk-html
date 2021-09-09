@@ -2,7 +2,7 @@
 // src="${data.image}" 
 
 const url = 'https://pokeapi.co/api/v2/pokemon/' ;
-const pokeBox = document.getElementById('pokemon-item');
+// const pokeBox = document.getElementById('pokemon-item');
 let pokemonId = 25;
 let pokemonDetailId = 25;
 let totalPokemons = 898;
@@ -11,10 +11,11 @@ setPokemonBox(pokemonId);
 
 getTotalPokemon();
 async function getTotalPokemon() {
-    const resp = await fetch(`${ url }3`);
+    const resp = await fetch(`${ url }`);
     const data = await resp.json();
     totalPokemons = data;
-    console.log('pikachu-atributes: ' , totalPokemons)
+    console.log('pikachu-atributes: ' , JSON.stringify(data));
+    console.log('total pokemon: ' , Object.keys(data));
 };
 
 async function getPokemon( pokemonId, listPosition ) {
@@ -22,7 +23,7 @@ async function getPokemon( pokemonId, listPosition ) {
     const data = await resp.json();
     document.getElementById(`pokemon-place__${ listPosition }`).innerHTML = 
     `
-    <button type="button" class="list-button" onclick="getPokemonDetail(${pokemonId})">
+    <button type="button" class="list__button" onclick="getPokemonDetail(${pokemonId})">
         <img class="list__image" 
             src="${ data.sprites.other.dream_world.front_default }" 
             alt="image of ${ data.name }">
@@ -65,12 +66,12 @@ async function getPokemonDetail (id) {
     const resp = await fetch(`${ url }${ id }`);
     const data = await resp.json();
     const detailElement = document.createElement( "SECTION" );
-    detailElement.setAttribute("class", 'pokemon-detail' );
+    detailElement.setAttribute("class", 'detail' );
     detailElement.setAttribute("id", 'pokemon-detail' );
     detailElement.innerHTML = `
     
-    <section class="detail-sprites">
-        <div class="detail-sprites__info">
+    <section class="detail__box">
+        <div class="detail__info">
             <h2 class="info__name">#${data.id}-${data.name.toUpperCase()}</h2>
             <h3 class="info__types">
                 TYPE: ${data.types.map((item) => item.type.name).join("<br>")}
@@ -84,20 +85,14 @@ async function getPokemonDetail (id) {
             <h3>
                 WEIGHT: ${data.weight}kg
             </h3>
-            <h3>
-            </h3>
-            <h3>
-            </h3>
-            <h3>
-            </h3>
         </div>
-        <div class="detail-sprites__sprites-box">
-            <div class="sprites-box__artwork">
+        <div class="detail__sprites">
+            <div class="sprites__artwork">
                 <img class="artwork__image" 
                 src="${ data.sprites.other["official-artwork"].front_default }" 
                 alt="pixel image of ${ data.name }">
             </div>
-            <div class="sprites-box__versions"> 
+            <div class="sprites__versions"> 
                 <img class="versions__image"
                     src="${ data.sprites.versions["generation-iii"].emerald.front_default }" 
                     alt="pixel image of ${ data.name }">
@@ -112,7 +107,7 @@ async function getPokemonDetail (id) {
     </section>
     `;
     detailElement.addEventListener("click", () => removeDetail());
-    document.getElementsByClassName("pokemon-navigator")[0].insertAdjacentElement( "afterend", detailElement );
+    document.getElementsByClassName("gallery")[0].insertAdjacentElement( "afterend", detailElement );
 } 
 
 function removeDetail () {
