@@ -13,31 +13,33 @@
         <div class="back-color__middle"></div>
         <div class="back-color__bottom"></div>
     </div>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/269px-International_Pok%C3%A9mon_logo.svg.png" alt="icon of pokemon" class="icon">
-    <h1 class="main-title">POKEMONS</h1>
-    <div class="pokemon-navigator">
-        <button type="button" class="pokemon-button"
+    <header class="header">
+        <h1 class="header__main-title">POKEMONS</h1>
+        <img class="header__image-pokemon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/269px-International_Pok%C3%A9mon_logo.svg.png" alt="icon of pokemon" class="icon">
+    </header>
+    <section class="gallery">
+        <button type="button" class="gallery__navigation-button"
         onclick="backPagination()">
-            <div class="button-icon">
-                <div class="button-icon__downLeft-upRigth"></div>
-                <div class="button-icon__upLeft-downRigth"></div>
+            <div class="navigation-button">
+                <div class="navigation-button__downLeft-upRigth"></div>
+                <div class="navigation-button__upLeft-downRigth"></div>
             </div>
         </button>
-        <ul class="pokemon-box" id="pokemon-item">
-            <li className="pokemon-list" id="pokemon-place__1"></li>
-            <li className="pokemon-list" id="pokemon-place__2"></li>
-            <li className="pokemon-list" id="pokemon-place__3"></li>
-            <li className="pokemon-list" id="pokemon-place__4"></li>
+        <ul class="gallery__list" id="pokemon-item">
+            <li className="list" id="pokemon-place__1"></li>
+            <li className="list" id="pokemon-place__2"></li>
+            <li className="list" id="pokemon-place__3"></li>
+            <li className="list" id="pokemon-place__4"></li>
         </ul>
-        <button type="button" class="pokemon-button"
+        <button type="button" class="gallery__navigation-button"
         onclick="forwardPagination()">
-            <div class="button-icon">
-                <div class="button-icon__upLeft-downRigth"></div>
-                <div class="button-icon__downLeft-upRigth"></div>
+            <div class="navigation-button">
+                <div class="navigation-button__upLeft-downRigth"></div>
+                <div class="navigation-button__downLeft-upRigth"></div>
             </div>
         </button>
-    </div>
-    <label for="index" class="search">
+    </section>
+    <label for="index" class="gallery__search">
         <input type="number" id="index" name="index" min="1" max="898" class="search__input">
         <input type="button" class="search__button" onclick="setPokemonByInput( `${document.getElementById('index').value}` )" value="search index pokemon">
     </label>

@@ -52,23 +52,39 @@ body {
   border-top: 1vh solid #d8d8d8;
 }
 
-.main-title {
-  opacity: 0;
-  color: darkred;
-  font-size: 3em;
+.header {
+  height: 20vh;
+  width: 20vw;
+  position: absolute;
+  top: -7vh;
+  text-align: center;
 }
 
-.pokemon-navigator {
+.header__main-title {
+  opacity: 0;
+}
+
+.header__image-pokemon {
+  max-height: 12vh;
+  width: auto;
+}
+
+.gallery {
+  height: 100vh;
+  width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   position: absolute;
   top: 34.5vh;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
-.pokemon-box {
-  height: 175px;
-  width: 700px;
+.gallery__list {
+  height: 100vh;
+  width: 80vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -82,7 +98,7 @@ body {
   list-style: none;
 }
 
-.pokemon-list {
+.gallery__list .list {
   height: 200px;
   width: 175px;
   display: -webkit-box;
@@ -102,54 +118,50 @@ body {
   margin: 0 20px;
 }
 
-.list__image {
-  height: 60vh;
-  width: 125px;
+.gallery__list .list__button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  margin: -8px;
   border-style: solid;
   border-width: 8px;
   border-radius: 5px;
   background-color: gainsboro;
   border: 5px solid #000;
+}
+
+.gallery__list .list__button:hover {
+  background-color: gold;
+}
+
+.gallery__list .list__image {
+  height: 60vh;
+  width: 125px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  /* flex-direction: column;
-    justify-content: center;
-    align-items: center;   */
   -webkit-transition-duration: 0.4s;
           transition-duration: 0.4s;
 }
 
-.list__image:hover {
+.gallery__list .list__image:hover {
   height: 60vh;
   width: 175px;
-  background-color: gold;
 }
 
-.list__image:hover .list__name {
-  color: gold;
-}
-
-.list__name {
+.gallery__list .list__name {
   height: 20px;
   width: 10vw;
-  font-size: 1.2em;
+  font-size: 3vh;
   color: red;
   text-align: center;
   text-transform: uppercase;
-  margin: auto;
+  margin-bottom: 8vh;
 }
 
-.list-button {
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-  margin: -8px;
-}
-
-.pokemon-button {
-  height: 175px;
-  width: 40px;
+.gallery__navigation-button {
+  height: 100vh;
+  width: 10vw;
   border: none;
   background-color: transparent;
   cursor: pointer;
@@ -168,7 +180,7 @@ body {
           align-items: center;
 }
 
-.button-icon {
+.gallery__navigation-button .navigation-button {
   height: 60px;
   width: 60px;
   border-radius: 50%;
@@ -188,11 +200,7 @@ body {
   margin: auto;
 }
 
-.button-icon:hover {
-  background-color: goldenrod;
-}
-
-.button-icon__upLeft-downRigth {
+.gallery__navigation-button .navigation-button__upLeft-downRigth {
   height: 20px;
   width: 20px;
   background-color: red;
@@ -200,7 +208,7 @@ body {
           transform: skewX(40deg);
 }
 
-.button-icon__downLeft-upRigth {
+.gallery__navigation-button .navigation-button__downLeft-upRigth {
   height: 20px;
   width: 20px;
   background-color: red;
@@ -208,7 +216,46 @@ body {
           transform: skewX(-40deg);
 }
 
-.pokemon-detail {
+.gallery__navigation-button .navigation-button:hover {
+  background-color: goldenrod;
+}
+
+.gallery__search {
+  height: 5vw;
+  width: 5vw;
+  border-radius: 50%;
+  border: 1vh solid #000;
+  background-color: darkred;
+  position: absolute;
+  top: 75vh;
+  left: 48.5vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.gallery__search .search__input {
+  height: 5vw;
+  width: 5vw;
+  border: none;
+  border-radius: 50%;
+  color: indianred;
+}
+
+.gallery__search .search__button {
+  border: none;
+  background-color: transparent;
+  color: #e7db2c;
+}
+
+.detail {
   height: 100vh;
   width: 100vw;
   overflow: hidden;
@@ -232,7 +279,7 @@ body {
           align-items: center;
 }
 
-.detail-sprites {
+.detail__box {
   border-radius: 30px;
   background-color: burlywood;
   height: 90vh;
@@ -252,31 +299,31 @@ body {
   overflow: hidden;
 }
 
-.detail-sprites__info {
+.detail__info {
   height: 100%;
   width: 50%;
   margin: auto;
 }
 
-.detail-sprites__info .info__name {
+.detail__info .info__name {
   color: darkred;
   font-size: 4vw;
   text-align: center;
 }
 
-.detail-sprites__info .info__types {
+.detail__info .info__types {
   text-align: center;
 }
 
-.detail-sprites__info .info__abilities {
+.detail__info .info__abilities {
   text-align: center;
 }
 
-.detail-sprites__info h3 {
+.detail__info h3 {
   text-align: center;
 }
 
-.detail-sprites__sprites-box {
+.detail__sprites {
   height: 100%;
   width: 50%;
   -webkit-box-orient: horizontal;
@@ -290,7 +337,7 @@ body {
       align-content: center;
 }
 
-.detail-sprites__sprites-box .sprites-box__artwork {
+.detail__sprites .sprites__artwork {
   height: 75%;
   width: 100%;
   display: -webkit-box;
@@ -303,14 +350,14 @@ body {
   background-image: repeating-linear-gradient(90deg, transparent, transparent 50px, rgba(255, 127, 0, 0.25) 50px, rgba(255, 127, 0, 0.25) 56px, transparent 56px, transparent 63px, rgba(255, 127, 0, 0.25) 63px, rgba(255, 127, 0, 0.25) 69px, transparent 69px, transparent 116px, rgba(255, 206, 0, 0.25) 116px, rgba(255, 206, 0, 0.25) 166px), repeating-linear-gradient(0deg, transparent, transparent 50px, rgba(255, 127, 0, 0.25) 50px, rgba(255, 127, 0, 0.25) 56px, transparent 56px, transparent 63px, rgba(255, 127, 0, 0.25) 63px, rgba(255, 127, 0, 0.25) 69px, transparent 69px, transparent 116px, rgba(255, 206, 0, 0.25) 116px, rgba(255, 206, 0, 0.25) 166px), repeating-linear-gradient(-45deg, transparent, transparent 5px, rgba(143, 77, 63, 0.25) 5px, rgba(143, 77, 63, 0.25) 10px), repeating-linear-gradient(45deg, transparent, transparent 5px, rgba(143, 77, 63, 0.25) 5px, rgba(143, 77, 63, 0.25) 10px);
 }
 
-.detail-sprites__sprites-box .sprites-box__artwork .artwork__image {
+.detail__sprites .sprites__artwork .artwork__image {
   max-height: 90%;
   max-width: 90%;
   display: block;
   margin: auto;
 }
 
-.detail-sprites__sprites-box .sprites-box__versions {
+.detail__sprites .sprites__versions {
   width: 100%;
   height: 25%;
   background-image: repeating-linear-gradient(green, green 0.1vh, transparent 1vh, transparent 2vh), repeating-linear-gradient(90deg, green, green 0.1vh, transparent 1vh, transparent 2vh), repeating-linear-gradient(#18181a, #18181a 5%);
@@ -328,44 +375,9 @@ body {
           align-items: center;
 }
 
-.detail-sprites__sprites-box .sprites-box__versions .versions__image {
+.detail__sprites .sprites__versions .versions__image {
   max-height: 100%;
   width: 33.33%;
   padding: 2%;
-}
-
-.search {
-  height: 5vw;
-  width: 5vw;
-  border-radius: 50%;
-  border: 1vh solid #000;
-  background-color: darkred;
-  position: absolute;
-  top: 75vh;
-  left: 48.5vw;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  cursor: pointer;
-}
-
-.search__input {
-  height: 5vw;
-  width: 5vw;
-  border: none;
-  border-radius: 50%;
-  color: indianred;
-}
-
-.search__button {
-  border: none;
-  background-color: transparent;
-  color: #e7db2c;
 }
 /*# sourceMappingURL=style.css.map */
