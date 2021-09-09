@@ -56,55 +56,63 @@ body {
     width:100vw;
     display: flex;
     // display: none;
+    background-color: #000;
+    justify-content: start;
     position: fixed;
     top: 0;
     left: 0;
     
-    &__list {
-        // position: absolute;
-        // top: 0;
-        // left: 0;
-        height: 100vh;
-        width: 80vw;
+    &__pokemon {
+        height: 100%;
+        width: 80%;
+        margin: 0 0 0 -2.5vw;
         display: flex;
-        margin: 0;
         justify-content: center;
         align-items: center;
         text-align: center;
         list-style: none;
-
-        .list {
-            height: 100vh;
-            max-width: 20vw;
+        // position: absolute;
+        // top: 0;
+        // left: 114px;
+        
+        .pokemon {
+            height: 100%;
+            max-width: 20%;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
             align-items: center;
             cursor: pointer;
-            margin: 0 20px;
+            // margin: 0 20px;
             
             &__button {
                 height: 100vh;
                 width: 20vw;
+                min-width: 15vw;
+                display: flex;
+                flex-flow: column;
+                justify-content: flex-end;
                 border: none;
                 background-color: transparent;
                 cursor: pointer;
-                padding: 8px;
+                padding: 1vw;
                 border-style: solid;
                 border-width: 8px;
                 background-color: gainsboro;
-                border: 5px solid #000;
+                background-color: #000;
+                // outline: 10px solid #000;
                 transition-duration: 0.4s;
             }
 
             &__button:hover {
                 background-color: gold;
-                width: 30vw
+                border-radius: 5vw;
+                width: 30vw;
             }
             
             &__image {
-                max-height: 100%;
-                max-width: 100%;
+                height: 100%;
+                width: 100%;
             }
             
             // &__image:hover {
@@ -123,19 +131,18 @@ body {
             }
         }
         
-        .list:hover {
-            // .list__name {
-                color: green;
-            // }
-        }
+        // .list:hover {
+        //     // .list__name {
+        //         color: green;
+        //     // }
+        // }
     }
 
     &__navigation-button {
-        height: 100vh;
-        width: 10vw;
+        height: 100%;
+        width: 10%;
         border: none;
-        background-color: #000;
-        cursor: pointer;
+        // background-color: #000;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -150,6 +157,7 @@ body {
             justify-content: center;
             align-items: center;
             margin: auto;
+            cursor: pointer;
             
             &__upLeft-downRigth {
                 height: 20px;

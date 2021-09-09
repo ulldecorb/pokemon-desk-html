@@ -18,26 +18,26 @@
         <img class="header__image-pokemon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/269px-International_Pok%C3%A9mon_logo.svg.png" alt="icon of pokemon" class="icon">
     </header>
     <section class="gallery">
-        <button type="button" class="gallery__navigation-button"
-        onclick="backPagination()">
-            <div class="navigation-button">
+        <div class="gallery__navigation-button">
+                <button type="button" class="navigation-button"
+                onclick="backPagination()">
                 <div class="navigation-button__downLeft-upRigth"></div>
                 <div class="navigation-button__upLeft-downRigth"></div>
-            </div>
-        </button>
-        <ul class="gallery__list" id="pokemon-item">
-            <li className="list" id="pokemon-place__1"></li>
-            <li className="list" id="pokemon-place__2"></li>
-            <li className="list" id="pokemon-place__3"></li>
-            <li className="list" id="pokemon-place__4"></li>
+            </button>
+        </div>
+        <ul class="gallery__pokemon" id="pokemon-item">
+            <li className="pokemon" id="pokemon-place__1"></li>
+            <li className="pokemon" id="pokemon-place__2"></li>
+            <li className="pokemon" id="pokemon-place__3"></li>
+            <li className="pokemon" id="pokemon-place__4"></li>
         </ul>
-        <button type="button" class="gallery__navigation-button"
-        onclick="forwardPagination()">
-            <div class="navigation-button">
+        <div class="gallery__navigation-button">
+            <button type="button" class="navigation-button"
+                onclick="forwardPagination()">
                 <div class="navigation-button__upLeft-downRigth"></div>
                 <div class="navigation-button__downLeft-upRigth"></div>
-            </div>
-        </button>
+            </button>
+        </div>
     </section>
     <label for="index" class="gallery__search">
         <input type="number" id="index" name="index" min="1" max="898" class="search__input">

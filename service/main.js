@@ -18,16 +18,16 @@ async function getTotalPokemon() {
     console.log('total pokemon: ' , Object.keys(data));
 };
 
-async function getPokemon( pokemonId, listIndex ) {
+async function getPokemon( pokemonId, pokemonIndex ) {
     const resp = await fetch(`${ url }${ pokemonId }`);
     const data = await resp.json();
-    document.getElementById(`pokemon-place__${ listIndex }`).innerHTML = 
+    document.getElementById(`pokemon-place__${ pokemonIndex }`).innerHTML = 
     `
-    <button type="button" class="list__button" onclick="getPokemonDetail(${pokemonId})">
-        <img class="list__image" 
+    <button type="button" class="pokemon__button" onclick="getPokemonDetail(${pokemonId})">
+        <img class="pokemon__image" 
             src="${ data.sprites.other.dream_world.front_default }" 
             alt="image of ${ data.name }">
-        <h2 class="list__name">
+        <h2 class="pokemon__name">
             ${`#${ pokemonId }<br>${ data.name }`}
         </h2>
     </button>

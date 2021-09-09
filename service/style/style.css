@@ -75,18 +75,22 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  background-color: #000;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
   position: fixed;
   top: 0;
   left: 0;
 }
 
-.gallery__list {
-  height: 100vh;
-  width: 80vw;
+.gallery__pokemon {
+  height: 100%;
+  width: 80%;
+  margin: 0 0 0 -2.5vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 0;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -97,9 +101,9 @@ body {
   list-style: none;
 }
 
-.gallery__list .list {
-  height: 100vh;
-  max-width: 20vw;
+.gallery__pokemon .pokemon {
+  height: 100%;
+  max-width: 20%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -114,35 +118,46 @@ body {
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
-  margin: 0 20px;
 }
 
-.gallery__list .list__button {
+.gallery__pokemon .pokemon__button {
   height: 100vh;
   width: 20vw;
+  min-width: 15vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   border: none;
   background-color: transparent;
   cursor: pointer;
-  padding: 8px;
+  padding: 1vw;
   border-style: solid;
   border-width: 8px;
   background-color: gainsboro;
-  border: 5px solid #000;
+  background-color: #000;
   -webkit-transition-duration: 0.4s;
           transition-duration: 0.4s;
 }
 
-.gallery__list .list__button:hover {
+.gallery__pokemon .pokemon__button:hover {
   background-color: gold;
+  border-radius: 5vw;
   width: 30vw;
 }
 
-.gallery__list .list__image {
-  max-height: 100%;
-  max-width: 100%;
+.gallery__pokemon .pokemon__image {
+  height: 100%;
+  width: 100%;
 }
 
-.gallery__list .list__name {
+.gallery__pokemon .pokemon__name {
   height: 20vh;
   width: 100%;
   font-size: 5vh;
@@ -151,16 +166,10 @@ body {
   text-transform: uppercase;
 }
 
-.gallery__list .list:hover {
-  color: green;
-}
-
 .gallery__navigation-button {
-  height: 100vh;
-  width: 10vw;
+  height: 100%;
+  width: 10%;
   border: none;
-  background-color: #000;
-  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -194,6 +203,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   margin: auto;
+  cursor: pointer;
 }
 
 .gallery__navigation-button .navigation-button__upLeft-downRigth {
