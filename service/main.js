@@ -18,10 +18,10 @@ async function getTotalPokemon() {
     console.log('total pokemon: ' , Object.keys(data));
 };
 
-async function getPokemon( pokemonId, listPosition ) {
+async function getPokemon( pokemonId, listIndex ) {
     const resp = await fetch(`${ url }${ pokemonId }`);
     const data = await resp.json();
-    document.getElementById(`pokemon-place__${ listPosition }`).innerHTML = 
+    document.getElementById(`pokemon-place__${ listIndex }`).innerHTML = 
     `
     <button type="button" class="list__button" onclick="getPokemonDetail(${pokemonId})">
         <img class="list__image" 
