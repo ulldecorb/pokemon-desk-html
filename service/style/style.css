@@ -75,8 +75,6 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  position: absolute;
-  top: 34.5vh;
   position: fixed;
   top: 0;
   left: 0;
@@ -88,6 +86,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin: 0;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -99,8 +98,8 @@ body {
 }
 
 .gallery__list .list {
-  height: 200px;
-  width: 175px;
+  height: 100vh;
+  max-width: 20vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -108,9 +107,9 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -119,51 +118,48 @@ body {
 }
 
 .gallery__list .list__button {
+  height: 100vh;
+  width: 20vw;
   border: none;
   background-color: transparent;
   cursor: pointer;
-  margin: -8px;
+  padding: 8px;
   border-style: solid;
   border-width: 8px;
-  border-radius: 5px;
   background-color: gainsboro;
   border: 5px solid #000;
-}
-
-.gallery__list .list__button:hover {
-  background-color: gold;
-}
-
-.gallery__list .list__image {
-  height: 60vh;
-  width: 125px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-transition-duration: 0.4s;
           transition-duration: 0.4s;
 }
 
-.gallery__list .list__image:hover {
-  height: 60vh;
-  width: 175px;
+.gallery__list .list__button:hover {
+  background-color: gold;
+  width: 30vw;
+}
+
+.gallery__list .list__image {
+  max-height: 100%;
+  max-width: 100%;
 }
 
 .gallery__list .list__name {
-  height: 20px;
-  width: 10vw;
-  font-size: 3vh;
+  height: 20vh;
+  width: 100%;
+  font-size: 5vh;
   color: red;
   text-align: center;
   text-transform: uppercase;
-  margin-bottom: 8vh;
+}
+
+.gallery__list .list:hover {
+  color: green;
 }
 
 .gallery__navigation-button {
   height: 100vh;
   width: 10vw;
   border: none;
-  background-color: transparent;
+  background-color: #000;
   cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -232,6 +228,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  display: none;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
