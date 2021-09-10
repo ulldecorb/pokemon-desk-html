@@ -8,6 +8,12 @@ body {
     overflow: hidden;
 }
 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
 .back-color {
     height: 100vh;
     width: 100vw;
@@ -23,11 +29,15 @@ body {
     &__middle{
         height: 10%;
         width: 100vw;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         background-color: #000;
     }
     
     &__bottom{
-        height: 45%;
+        height: 44vh;
         width: 100vw;
         background: radial-gradient(#FFF 5%, rgb(189, 186, 186) 70% );
         border-top: 1vh solid rgb(216, 216, 216);
@@ -66,53 +76,52 @@ body {
     &__pokemon {
         height: 100%;
         width: 80%;
-        // margin: 0 10%;
-        // margin: 0 0 0 -2.5vw;
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
         list-style: none;
         z-index: -1;
-        // position: absolute;
-        // top: 0;
-        // left: 114px;
         
         .pokemon {
             height:100%;
-            max-width: 20%;
+            max-width: 18%;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
             align-items: center;
             cursor: pointer;
-            // margin: 0 20px;
             
             &__button {
                 height: 60vh;
-                width: 20vw;
-                // min-width: 15vw;
+                width: 18vw;
                 margin-top: 10%;
                 display: flex;
-                flex-flow: column;
+                flex-direction: column;
                 justify-content: flex-end;
                 align-items: center;
                 border: none;
                 background-color: transparent;
                 cursor: pointer;
                 padding: 1vw;
-                // border-style: solid;
                 border-width: 8px;
-                // background-color: gainsboro;
-                // background-color: #000;
-                // outline: 10px solid #000;
                 transition-duration: 0.4s;
+                border-radius: 5vw;
             }
 
             &__button:hover {
                 background-color: gold;
                 border-radius: 5vw;
-                width: 30vw;
+                width: 23vw;
+
+                .pokemon__name-box {
+                    width: 80%;
+                }
+
+                // .pokemon__image {
+                //     height: 110%;
+                //     width: 110%;
+                // }
 
                 .name-box__name {
                     color: #000;
@@ -122,32 +131,33 @@ body {
             &__image {
                 height: 90%;
                 width: 90%;
+                // position: absolute;
+                // top: 0;
+                // left: 0;
+                // transform: translate(-100%, -50%);
+
             }
-            
-            // &__image:hover {
-            //     max-height: 100%;
-            //     width: auto;
-            // }
+
             &__name-box {
                 height: 7vh;
-                width: 80%;
+                width: 100%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                background-color: red;
-                border: 1vh solid #000;
+                // border: 5px solid #000;
                 border-radius: 7vh;
                 overflow: hidden;
+                background-color: transparent;
+                transition-duration: 0.4s;
                 
                 .name-box {
                     &__name {
-                        height: 7vh;
+                        height: 7.2vh;
                         width: 75%;
                         font-size: 4vh;
                         color: #000;
-                        // text-align: center;
                         text-transform: uppercase;
-                        // margin-bottom: 8vh;
+                        background-color: red;
                         display: flex;
                         justify-content: center;
                         align-items: center;
@@ -156,7 +166,6 @@ body {
                     &__id {
                         height: 7.2vh;
                         width: 25%;
-                        // margin-left: 10px;
                         font-size: 4vh;
                         // border-radius: 50%;
                         // border: 1.5vh solid #000;
@@ -165,7 +174,6 @@ body {
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        // text-align: center;
                     }
                 }
             }
@@ -184,7 +192,8 @@ body {
         .navigation-button {
             height: 15vh;
             width: 15vh;
-            border-radius: 1vw;
+            // border-radius: 1vw;
+            border-radius: 50%;
             border: none;
             background-color: transparent;
             display: flex;
@@ -223,27 +232,30 @@ body {
     }
     
     &__search {
-        height: 5vw;
-        width: 5vw;
-        border-radius: 50%;
+        height: 5vh;
+        width: 20vw;
+        border-radius: 0 0 0 4vh;
         border: 1vh solid #000;
         background-color: darkred;
         position: absolute;
-        top: 75vh;
-        left: 48.5vw;
+        top: 0;
+        left: 80vw;
         display: flex;
-        display: none;
+        // display: none;
         justify-content: center;
         align-items: center;
         cursor: pointer;
+        border-top: transparent;
         
         .search {
             &__input {
-                height: 5vw;
+                height: 5vh;
                 width: 5vw;
                 border: none;
-                border-radius: 50%;
+                // border-radius: 50%;
                 color:indianred;
+                font-size: 4vh;
+                text-align: center;
             }
             
             &__button {
