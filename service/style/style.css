@@ -99,6 +99,7 @@ body {
           align-items: center;
   text-align: center;
   list-style: none;
+  z-index: -1;
 }
 
 .gallery__pokemon .pokemon {
@@ -152,6 +153,10 @@ body {
   width: 30vw;
 }
 
+.gallery__pokemon .pokemon__button:hover .pokemon__name {
+  color: #000;
+}
+
 .gallery__pokemon .pokemon__image {
   height: 100%;
   width: 100%;
@@ -169,7 +174,6 @@ body {
 .gallery__navigation-button {
   height: 100%;
   width: 10%;
-  border: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -188,7 +192,9 @@ body {
 .gallery__navigation-button .navigation-button {
   height: 60px;
   width: 60px;
-  border-radius: 50%;
+  border-radius: 1vw;
+  border: none;
+  background-color: transparent;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -224,6 +230,15 @@ body {
 
 .gallery__navigation-button .navigation-button:hover {
   background-color: goldenrod;
+  background-color: red;
+}
+
+.gallery__navigation-button .navigation-button:hover .navigation-button__upLeft-downRigth {
+  background-color: orange;
+}
+
+.gallery__navigation-button .navigation-button:hover .navigation-button__downLeft-upRigth {
+  background-color: orange;
 }
 
 .gallery__search {

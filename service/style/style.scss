@@ -71,6 +71,7 @@ body {
         align-items: center;
         text-align: center;
         list-style: none;
+        z-index: -1;
         // position: absolute;
         // top: 0;
         // left: 114px;
@@ -108,6 +109,11 @@ body {
                 background-color: gold;
                 border-radius: 5vw;
                 width: 30vw;
+
+
+                .pokemon__name {
+                    color: #000;
+                }
             }
             
             &__image {
@@ -131,17 +137,13 @@ body {
             }
         }
         
-        // .list:hover {
-        //     // .list__name {
-        //         color: green;
-        //     // }
-        // }
+        .list:hover {
+        }
     }
 
     &__navigation-button {
         height: 100%;
         width: 10%;
-        border: none;
         // background-color: #000;
         display: flex;
         flex-direction: column;
@@ -151,7 +153,9 @@ body {
         .navigation-button {
             height: 60px;
             width: 60px;
-            border-radius: 50%;
+            border-radius: 1vw;
+            border: none;
+            background-color: transparent;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -176,6 +180,15 @@ body {
         
         .navigation-button:hover {
             background-color: goldenrod;
+            background-color: red;
+
+            .navigation-button__upLeft-downRigth {
+                background-color: orange;
+            }
+            .navigation-button__downLeft-upRigth {
+                background-color: orange;
+            }
+
         }
     }
     
