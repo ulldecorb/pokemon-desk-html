@@ -27,9 +27,14 @@ async function getPokemon( pokemonId, pokemonIndex ) {
         <img class="pokemon__image" 
             src="${ data.sprites.other.dream_world.front_default }" 
             alt="image of ${ data.name }">
-        <h2 class="pokemon__name">
-            ${`#${ pokemonId }<br>${ data.name }`}
-        </h2>
+        <span class="pokemon__name-box">
+            <h2 class="name-box__id">
+                ${`${ pokemonId }`}
+            </h2>
+            <h2 class="name-box__name">
+                ${`${ data.name }`}
+            </h2>
+        </span>
     </button>
     `;
 };

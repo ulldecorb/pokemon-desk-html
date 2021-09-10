@@ -56,8 +56,9 @@ body {
     width:100vw;
     display: flex;
     // display: none;
-    background-color: #000;
-    justify-content: start;
+    // background-color: #000;
+    background-color: transparent;
+    justify-content: space-between;
     position: fixed;
     top: 0;
     left: 0;
@@ -65,18 +66,20 @@ body {
     &__pokemon {
         height: 100%;
         width: 80%;
-        margin: 0 0 0 -2.5vw;
+        // margin: 0 10%;
+        // margin: 0 0 0 -2.5vw;
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
         list-style: none;
+        z-index: -1;
         // position: absolute;
         // top: 0;
         // left: 114px;
         
         .pokemon {
-            height: 100%;
+            height:100%;
             max-width: 20%;
             display: flex;
             flex-direction: column;
@@ -86,20 +89,22 @@ body {
             // margin: 0 20px;
             
             &__button {
-                height: 100vh;
+                height: 60vh;
                 width: 20vw;
-                min-width: 15vw;
+                // min-width: 15vw;
+                margin-top: 10%;
                 display: flex;
                 flex-flow: column;
                 justify-content: flex-end;
+                align-items: center;
                 border: none;
                 background-color: transparent;
                 cursor: pointer;
                 padding: 1vw;
-                border-style: solid;
+                // border-style: solid;
                 border-width: 8px;
-                background-color: gainsboro;
-                background-color: #000;
+                // background-color: gainsboro;
+                // background-color: #000;
                 // outline: 10px solid #000;
                 transition-duration: 0.4s;
             }
@@ -108,50 +113,80 @@ body {
                 background-color: gold;
                 border-radius: 5vw;
                 width: 30vw;
+
+                .name-box__name {
+                    color: #000;
+                }
             }
             
             &__image {
-                height: 100%;
-                width: 100%;
+                height: 90%;
+                width: 90%;
             }
             
             // &__image:hover {
             //     max-height: 100%;
             //     width: auto;
             // }
-            
-            &__name {
-                height: 20vh;
-                width: 100%;
-                font-size: 5vh;
-                color: red;
-                text-align: center;
-                text-transform: uppercase;
-                // margin-bottom: 8vh;
+            &__name-box {
+                height: 7vh;
+                width: 80%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: red;
+                border: 1vh solid #000;
+                border-radius: 7vh;
+                overflow: hidden;
+                
+                .name-box {
+                    &__name {
+                        height: 7vh;
+                        width: 75%;
+                        font-size: 4vh;
+                        color: #000;
+                        // text-align: center;
+                        text-transform: uppercase;
+                        // margin-bottom: 8vh;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    
+                    &__id {
+                        height: 7.2vh;
+                        width: 25%;
+                        // margin-left: 10px;
+                        font-size: 4vh;
+                        // border-radius: 50%;
+                        // border: 1.5vh solid #000;
+                        background-color: #000;
+                        color: yellow;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        // text-align: center;
+                    }
+                }
             }
         }
-        
-        // .list:hover {
-        //     // .list__name {
-        //         color: green;
-        //     // }
-        // }
     }
 
     &__navigation-button {
         height: 100%;
         width: 10%;
-        border: none;
         // background-color: #000;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
         
         .navigation-button {
-            height: 60px;
-            width: 60px;
-            border-radius: 50%;
+            height: 15vh;
+            width: 15vh;
+            border-radius: 1vw;
+            border: none;
+            background-color: transparent;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -160,15 +195,15 @@ body {
             cursor: pointer;
             
             &__upLeft-downRigth {
-                height: 20px;
-                width: 20px;
+                height: 20%;
+                width: 50%;
                 background-color: red;
                 transform: skewX(40deg);
             }
             
             &__downLeft-upRigth {
-                height: 20px;
-                width: 20px;
+                height: 20%;
+                width: 50%;
                 background-color: red;
                 transform: skewX(-40deg);
             }
@@ -176,6 +211,14 @@ body {
         
         .navigation-button:hover {
             background-color: goldenrod;
+            background-color: red;
+
+            .navigation-button__upLeft-downRigth {
+                background-color: orange;
+            }
+            .navigation-button__downLeft-upRigth {
+                background-color: orange;
+            }
         }
     }
     
