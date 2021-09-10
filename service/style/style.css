@@ -19,6 +19,12 @@ body {
   overflow: hidden;
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .back-color {
   height: 100vh;
   width: 100vw;
@@ -42,11 +48,16 @@ body {
 .back-color__middle {
   height: 10%;
   width: 100vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   background-color: #000;
 }
 
 .back-color__bottom {
-  height: 45%;
+  height: 44vh;
   width: 100vw;
   background: radial-gradient(#FFF 5%, #bdbaba 70%);
   border-top: 1vh solid #d8d8d8;
@@ -103,7 +114,7 @@ body {
 
 .gallery__pokemon .pokemon {
   height: 100%;
-  max-width: 20%;
+  max-width: 18%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -122,15 +133,15 @@ body {
 
 .gallery__pokemon .pokemon__button {
   height: 60vh;
-  width: 20vw;
+  width: 18vw;
   margin-top: 10%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
@@ -144,12 +155,17 @@ body {
   border-width: 8px;
   -webkit-transition-duration: 0.4s;
           transition-duration: 0.4s;
+  border-radius: 5vw;
 }
 
 .gallery__pokemon .pokemon__button:hover {
   background-color: gold;
   border-radius: 5vw;
-  width: 30vw;
+  width: 23vw;
+}
+
+.gallery__pokemon .pokemon__button:hover .pokemon__name-box {
+  width: 80%;
 }
 
 .gallery__pokemon .pokemon__button:hover .name-box__name {
@@ -163,7 +179,7 @@ body {
 
 .gallery__pokemon .pokemon__name-box {
   height: 7vh;
-  width: 80%;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -173,18 +189,20 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: red;
-  border: 1vh solid #000;
   border-radius: 7vh;
   overflow: hidden;
+  background-color: transparent;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
 }
 
 .gallery__pokemon .pokemon__name-box .name-box__name {
-  height: 7vh;
+  height: 7.2vh;
   width: 75%;
   font-size: 4vh;
   color: #000;
   text-transform: uppercase;
+  background-color: red;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -234,7 +252,7 @@ body {
 .gallery__navigation-button .navigation-button {
   height: 15vh;
   width: 15vh;
-  border-radius: 1vw;
+  border-radius: 50%;
   border: none;
   background-color: transparent;
   display: -webkit-box;
@@ -284,18 +302,17 @@ body {
 }
 
 .gallery__search {
-  height: 5vw;
-  width: 5vw;
-  border-radius: 50%;
+  height: 5vh;
+  width: 20vw;
+  border-radius: 0 0 0 4vh;
   border: 1vh solid #000;
   background-color: darkred;
   position: absolute;
-  top: 75vh;
-  left: 48.5vw;
+  top: 0;
+  left: 80vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  display: none;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -303,14 +320,16 @@ body {
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
+  border-top: transparent;
 }
 
 .gallery__search .search__input {
-  height: 5vw;
+  height: 5vh;
   width: 5vw;
   border: none;
-  border-radius: 50%;
   color: indianred;
+  font-size: 4vh;
+  text-align: center;
 }
 
 .gallery__search .search__button {
