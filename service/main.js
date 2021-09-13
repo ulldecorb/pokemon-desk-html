@@ -4,6 +4,7 @@
 const url = 'https://pokeapi.co/api/v2/pokemon/' ;
 // const pokeBox = document.getElementById('pokemon-item');
 const gallery = document.getElementById('gallery');
+const search = document.getElementById('search');
 let pokemonId = 25;
 let pokemonDetailId = 25;
 let totalPokemons = 898;
@@ -26,7 +27,7 @@ async function getPokemon( pokemonId, pokemonIndex ) {
     `
     <button type="button" class="pokemon__button" onclick="getPokemonDetail(${pokemonId})">
         <img class="pokemon__image" 
-            src="${ data.sprites.other.dream_world.front_default }" 
+            src="${ data.sprites.other.dream_world.front_default ||  data.sprites.other["official-artwork"].front_default  }" 
             alt="image of ${ data.name }">
         <span class="pokemon__name-box">
             <h2 class="name-box__id">
@@ -100,13 +101,13 @@ async function getPokemonDetail (id) {
             </div>
             <div class="sprites__versions"> 
                 <img class="versions__image"
-                    src="${ data.sprites.versions["generation-iii"].emerald.front_default }" 
+                    src="${ data.sprites.versions["generation-iii"].emerald.front_default || "https://image.flaticon.com/icons/png/512/528/528101.png" }" 
                     alt="pixel image of ${ data.name }">
                 <img class="versions__image" 
-                    src="${ data.sprites.versions["generation-iv"]["diamond-pearl"].front_default }" 
+                    src="${ data.sprites.versions["generation-iv"]["diamond-pearl"].front_default || "https://image.flaticon.com/icons/png/512/528/528101.png" }" 
                     alt="pixel image of ${ data.name }">
                 <img class="versions__image" 
-                    src="${ data.sprites.versions["generation-v"]["black-white"].animated.front_shiny }" 
+                    src="${ data.sprites.versions["generation-v"]["black-white"].animated.front_shiny || "https://image.flaticon.com/icons/png/512/528/528101.png" }" 
                     alt="pixel image of ${ data.name }">
             </div>
         </div>
@@ -132,6 +133,7 @@ function setPokemonByInput(stringId) {
 
 function showGallery() {
     gallery.style.display = "flex";
+    search.style.display = "flex";
 }
 // function setPokemonByInput (stringId) {
 //     let numId = Number.parseInt( stringId , 10)
