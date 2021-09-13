@@ -12,8 +12,9 @@
     <div class="background">
         <div class="background__middle"></div>
         <div class="background__bottom"></div>
-        <div class="background__circle-box" type="button"></div>
-        <button class="background__outer-circle" 
+        <div class="background__circle-box" ></div>
+        <button class="background__outer-circle"
+            type="button" 
             onclick="showGallery()">
             <div class="background__inner-circle"></div>
         </button>
@@ -46,6 +47,7 @@
         </div>
     </section>
     <label for="index" class="gallery__search">
+        <div class="search__tooltip">Search pokemon by index number</div>
         <input type="number" id="index" name="index" min="1" max="898" class="search__input">
         <input type="button" class="search__button" onclick="setPokemonByInput( `${document.getElementById('index').value}` )" value="search index pokemon">
     </label>
