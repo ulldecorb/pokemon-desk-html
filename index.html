@@ -9,15 +9,21 @@
     <title>Pokedex</title>
 </head>
 <body>
-    <div class="back-color">
-        <div class="back-color__middle"></div>
-        <div class="back-color__bottom"></div>
+    <div class="background">
+        <div class="background__middle"></div>
+        <div class="background__bottom"></div>
+        <div class="background__circle-box" type="button"></div>
+        <button class="background__outer-circle" 
+            onclick="showGallery()">
+            <div class="background__inner-circle"></div>
+        </button>
     </div>
     <header class="header">
         <h1 class="header__main-title">POKEMONS</h1>
-        <!-- <img class="header__image-pokemon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/269px-International_Pok%C3%A9mon_logo.svg.png" alt="icon of pokemon" class="icon"> -->
+        <img class="header__image-pokemon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/269px-International_Pok%C3%A9mon_logo.svg.png" alt="icon of pokemon" class="icon">
     </header>
-    <section class="gallery">
+    <section class="gallery"
+        id="gallery">
         <div class="gallery__navigation-button">
                 <button type="button" class="navigation-button"
                 onclick="backPagination()">
