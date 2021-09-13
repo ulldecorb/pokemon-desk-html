@@ -46,7 +46,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .background__middle {
-  height: 10%;
+  height: 7vw;
   width: 100vw;
   position: absolute;
   top: 50%;
@@ -54,7 +54,7 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   background-color: #000;
-  z-index: 2;
+  z-index: -2;
 }
 
 .background__bottom {
@@ -74,8 +74,6 @@ input[type=number]::-webkit-outer-spin-button {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  -webkit-box-shadow: 0 1vh #d8d8d8;
-          box-shadow: 0 1vh #d8d8d8;
 }
 
 .background__inner-circle {
@@ -83,6 +81,8 @@ input[type=number]::-webkit-outer-spin-button {
   width: 30vmin;
   border-radius: 50%;
   border: 0.5vh solid #e9e9e9;
+  -webkit-box-shadow: 1vh 1vh 10px 4px #bdbaba;
+          box-shadow: 1vh 1vh 10px 4px #bdbaba;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -92,6 +92,9 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .background__outer-circle {
+  -webkit-box-shadow: inset 1vh 1vh 5px 4px #bdbaba;
+          box-shadow: inset 1vh 1vh 5px 4px #bdbaba;
+  border: 0.5vh solid #000;
   height: 60vmin;
   width: 60vmin;
   border-radius: 50%;
@@ -106,11 +109,15 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .background__outer-circle:hover {
+  -webkit-box-shadow: inset 1vh 1vh 0px 4px red;
+          box-shadow: inset 1vh 1vh 0px 4px red;
   background-color: orange;
 }
 
 .background__outer-circle:hover .background__inner-circle {
   border: 0.5vh solid red;
+  -webkit-box-shadow: 1vh 1vh red;
+          box-shadow: 1vh 1vh red;
 }
 
 .background__outer-circle:hover .background__middle {
@@ -334,12 +341,16 @@ input[type=number]::-webkit-outer-spin-button {
           align-items: center;
   margin: auto;
   cursor: pointer;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
 }
 
 .gallery__navigation-button .navigation-button__upLeft-downRigth {
   height: 20%;
   width: 50%;
   background-color: red;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
   -webkit-transform: skewX(40deg);
           transform: skewX(40deg);
 }
@@ -347,18 +358,48 @@ input[type=number]::-webkit-outer-spin-button {
 .gallery__navigation-button .navigation-button__downLeft-upRigth {
   height: 20%;
   width: 50%;
-  background-color: red;
+  background: red;
   -webkit-transform: skewX(-40deg);
           transform: skewX(-40deg);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .gallery__navigation-button .navigation-button:hover {
-  background-color: goldenrod;
   background-color: red;
 }
 
 .gallery__navigation-button .navigation-button:hover .navigation-button__upLeft-downRigth {
+  -webkit-animation: mymove infinite;
+          animation: mymove infinite;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  background: repeating-linear-gradient(0deg, yellow, yellow 33.33%, red 33.3%, yellow 33.3);
   background-color: orange;
+}
+
+@-webkit-keyframes mymove {
+  0% {
+    background: repeating-linear-gradient(90deg, red, red 33.33%, yellow 33.3%, yellow 33.3);
+  }
+  50% {
+    background: repeating-linear-gradient(90deg, yellow, yellow 33.33%, red 33.3%, yellow 33.3);
+  }
+  100% {
+    background: repeating-linear-gradient(90deg, yellow, yellow 33.33%, yellow 33.3%, red 33.3);
+  }
+}
+
+@keyframes mymove {
+  0% {
+    background: repeating-linear-gradient(90deg, red, red 33.33%, yellow 33.3%, yellow 33.3);
+  }
+  50% {
+    background: repeating-linear-gradient(90deg, yellow, yellow 33.33%, red 33.3%, yellow 33.3);
+  }
+  100% {
+    background: repeating-linear-gradient(90deg, yellow, yellow 33.33%, yellow 33.3%, red 33.3);
+  }
 }
 
 .gallery__navigation-button .navigation-button:hover .navigation-button__downLeft-upRigth {
@@ -367,16 +408,17 @@ input[type=number]::-webkit-outer-spin-button {
 
 .gallery__search {
   height: 5vh;
-  width: 20vw;
+  width: 15vw;
   border-radius: 0 0 0 2vh;
   border: 1vh solid #000;
   background-color: darkred;
   position: absolute;
   top: 0;
-  left: 80vw;
+  left: 85vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  display: none;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -385,14 +427,13 @@ input[type=number]::-webkit-outer-spin-button {
           align-items: center;
   cursor: pointer;
   border-top: transparent;
-  cursor: pointer;
   -webkit-box-shadow: 0.5vw 0.5vw 10px rgba(41, 4, 4, 0.863);
           box-shadow: 0.5vw 0.5vw 10px rgba(41, 4, 4, 0.863);
 }
 
 .gallery__search .search__input {
-  height: 4vh;
-  width: 8vh;
+  height: 3vh;
+  width: 10vh;
   border-radius: 0.5vw;
   border: none;
   color: indianred;
@@ -401,15 +442,29 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .gallery__search .search__button {
+  height: 3vh;
   border: none;
   background-color: transparent;
+  font-size: 3vh;
+  text-align: center;
   color: #e7db2c;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   cursor: pointer;
+  margin: -20px 0.8vw;
+  vertical-align: text-bottom;
 }
 
 .gallery__search .search__tooltip {
   visibility: hidden;
-  width: 20vw;
+  width: 10vw;
   height: 5vh;
   background-color: black;
   color: yellow;
@@ -430,20 +485,29 @@ input[type=number]::-webkit-outer-spin-button {
   top: 6.75vh;
   z-index: 1;
   opacity: 0;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
   -webkit-transition: opacity 1s;
   transition: opacity 1s;
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
 }
 
 .gallery__search .search__tooltip::after {
   content: " ";
   position: absolute;
   bottom: 100%;
-  /* At the top of the tooltip */
   left: 50%;
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
   border-color: transparent transparent black transparent;
+}
+
+.gallery__search:hover .search__button {
+  background-color: orange;
+  color: red;
+  border-radius: 0.5vw;
 }
 
 .gallery__search:hover .search__tooltip {
