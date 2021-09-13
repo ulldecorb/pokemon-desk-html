@@ -3,6 +3,7 @@
 
 const url = 'https://pokeapi.co/api/v2/pokemon/' ;
 // const pokeBox = document.getElementById('pokemon-item');
+const gallery = document.getElementById('gallery');
 let pokemonId = 25;
 let pokemonDetailId = 25;
 let totalPokemons = 898;
@@ -129,6 +130,9 @@ function setPokemonByInput(stringId) {
     setPokemonBox(pokemonId);
 }
 
+function showGallery() {
+    gallery.style.display = "flex";
+}
 // function setPokemonByInput (stringId) {
 //     let numId = Number.parseInt( stringId , 10)
 //     setIndex(numId);

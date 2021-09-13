@@ -14,7 +14,7 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 0; 
 }
 
-.back-color {
+.background {
     height: 100vh;
     width: 100vw;
     background: radial-gradient(orange 5%, darkred 70% , rgb(56, 12, 12) );
@@ -34,6 +34,7 @@ input[type=number]::-webkit-outer-spin-button {
         left: 50%;
         transform: translate(-50%, -50%);
         background-color: #000;
+        z-index: 2;
     }
     
     &__bottom{
@@ -41,6 +42,66 @@ input[type=number]::-webkit-outer-spin-button {
         width: 100vw;
         background: radial-gradient(#FFF 5%, rgb(189, 186, 186) 70% );
         border-top: 1vh solid rgb(216, 216, 216);
+    }
+    
+    &__circle-box {
+        height:80vh;
+        width:80vh;
+        border-radius: 50%;
+        background-color: #000;
+        position:absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate( -50%, -50%);
+        box-shadow: 0 1vh  rgb(216, 216, 216);
+    }
+    
+    &__inner-circle {
+        // background: radial-gradient(#FFF 5%, rgb(189, 186, 186) 70% );
+        height: 30vmin;
+        width: 30vmin;
+        border-radius: 50%;
+        // background-color: rgb(189, 186, 186);
+        border: 0.5vh solid rgb(233, 233, 233);
+        // box-shadow: vh 1vh rgb(189, 186, 186);
+        position:absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate( -50%, -50%);
+        z-index: 2;
+        
+        // &:hover {
+            //     background-color: orange;
+            // }
+        }
+        
+    &__outer-circle {
+        // background: radial-gradient(#FFF 5%, rgb(189, 186, 186) 70% );
+        height: 60vmin;
+        width: 60vmin;
+        border-radius: 50%;
+        background-color: rgb(219, 219, 219);
+        // border: 12vh solid rgb(236, 236, 236);
+        position:absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate( -50%, -50%);
+        cursor: pointer;
+        z-index: 2;
+        
+        &:hover {
+            background-color: orange;
+            .background__inner-circle {
+                border: 0.5vh solid red;
+            }
+            .background__middle {
+                background-color: yellow;
+            }
+            
+            .background__circle-box {
+                background-color: yellow;
+            }
+        }
     }
 }
 
@@ -56,8 +117,12 @@ input[type=number]::-webkit-outer-spin-button {
     }
 
     &__image-pokemon {
-        max-height: 12vh;
-        width: auto;
+        max-height: auto;
+        width: 28vw;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, 0)
     }
 }
 
@@ -65,7 +130,7 @@ input[type=number]::-webkit-outer-spin-button {
     height:100vh;
     width:100vw;
     display: flex;
-    // display: none;
+    display: none;
     // background-color: #000;
     background-color: transparent;
     justify-content: space-between;
@@ -246,6 +311,7 @@ input[type=number]::-webkit-outer-spin-button {
         align-items: center;
         cursor: pointer;
         border-top: transparent;
+        cursor: pointer;
         
         .search {
             &__input {
@@ -262,7 +328,46 @@ input[type=number]::-webkit-outer-spin-button {
                 border: none;
                 background-color: transparent;
                 color: rgb(231, 219, 44);
+                cursor: pointer;
             }    
+
+            &__tooltip {
+                visibility: hidden;
+                width: 20vw;
+                height: 5vh; 
+                background-color: black;
+                color: yellow;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                border-radius: 6px;
+                padding: 5px 0;
+                position: absolute;
+                left: 0px;
+                top: 6.75vh;
+                z-index: 1;
+                opacity: 0;
+                transition: opacity 1s;
+
+                &::after {
+                    content: " ";
+                    position: absolute;
+                    bottom: 100%;  /* At the top of the tooltip */
+                    left: 50%;
+                    margin-left: -5px;
+                    border-width: 5px;
+                    border-style: solid;
+                    border-color: transparent transparent black transparent;
+                  }
+            }
+            
+        }
+        &:hover {
+            .search__tooltip {
+            visibility: visible;
+            opacity: 1;
+            }
         }
     }
 }
