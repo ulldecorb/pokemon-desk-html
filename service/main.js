@@ -112,6 +112,10 @@ async function getPokemonDetail (id) {
                     alt="generation 5 pixel image of ${ data.name }"> -->
             </div>
         </div>
+        <div class="detail__panel">
+            <div class="panel panel--left"></div>
+            <div class="panel panel--right"></div>
+        </div>
     </section>
     `;
     detailElement.addEventListener("click", () => removeDetail());
