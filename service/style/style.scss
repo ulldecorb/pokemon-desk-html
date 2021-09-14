@@ -430,7 +430,7 @@ input[type=number]::-webkit-outer-spin-button {
         // background-color: burlywood;
         background-color: #FFF;
         height: 100vh;
-        width: 70vw;
+        width: 70vw; 
         display: flex;
         flex-direction: column-reverse;
         justify-content: center;
@@ -522,18 +522,17 @@ input[type=number]::-webkit-outer-spin-button {
                 height: 100%;
                 width: 100%;
                 background-color: rgb(231, 219, 44);
-                border-radius: 50%;
+                // border-radius: 50%;
                 display: flex;
                 justify-content: center;
                 text-align: center;
                 
-
-                
                 .artwork__image {
+                    background-color: orange;
                     max-height: 200%;
                     max-width: 200%;
                     display: block;
-                    margin:  8% auto;
+                    margin:  8%;
                 }
             }
             
@@ -555,6 +554,40 @@ input[type=number]::-webkit-outer-spin-button {
                 }
             }
         }
+    }
+    
+    &__panel{
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: -35%;
+        display: flex;
+        justify-content: space-between;
+        animation: open-panel 2s ease 0s 1 alternate forwards;
+
+        .panel {
+            height: 98vh;
+            width: 50vw;
+            border: 1vh solid red;
+        
+            &--right {
+            //    background: burlywood; 
+            background-image: repeating-linear-gradient(-45deg, red, red 2%, #FFF 2.01%, #FFF 4%);
+            z-index: 4;
+        }
+        
+        &--left {
+            background: palevioletred;               
+            background-image: repeating-linear-gradient(45deg, red, red 2%, #FFF 2.01%, #FFF 4%);
+                z-index:4;
+            }
+        }
+    }
+
+    @keyframes open-panel {
+        0% {width: 100%; left:0;}
+        100% {width: 170%; left: -35%}
     }
 }
 
