@@ -81,7 +81,7 @@ async function getPokemonDetail (id) {
         <div class="detail__info">
             <h2 class="info__name">${data.name.toUpperCase()}</h2>
             <h2 class="info__id">${data.id}</h2>
-            <h3 class="info__types">
+            <!-- <h3 class="info__types">
                 TYPE: ${data.types.map((item) => item.type.name).join("<br>")}
             </h3>
             <h3 class="info__abilities">
@@ -92,7 +92,7 @@ async function getPokemonDetail (id) {
             </h3>
             <h3>
                 WEIGHT: ${data.weight}kg
-            </h3>
+            </h3> -->
         </div>
         <div class="detail__sprites">
             <div class="sprites__artwork">
@@ -100,7 +100,7 @@ async function getPokemonDetail (id) {
                 src="${ data.sprites.other["official-artwork"].front_default }" 
                 alt="pixel image of ${ data.name }">
             </div>
-            <div class="sprites__versions"> 
+            <!-- <div class="sprites__versions"> 
                 <img class="versions__image"
                     src="${ data.sprites.versions["generation-iii"].emerald.front_default || "https://image.flaticon.com/icons/png/512/528/528101.png" }" 
                     alt="generation 3 pixel image of ${ data.name }">
@@ -109,7 +109,7 @@ async function getPokemonDetail (id) {
                     alt="generation 4 pixel image of ${ data.name }">
                 <img class="versions__image" 
                     src="${ data.sprites.versions["generation-v"]["black-white"].animated.front_shiny || "https://image.flaticon.com/icons/png/512/528/528101.png" }" 
-                    alt="generation 5 pixel image of ${ data.name }">
+                    alt="generation 5 pixel image of ${ data.name }"> -->
             </div>
         </div>
     </section>

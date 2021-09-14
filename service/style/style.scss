@@ -110,52 +110,52 @@ input[type=number]::-webkit-outer-spin-button {
             }
         }
         
-        .header {
-            height: 20vh;
-            width: 20vw;
-            position: absolute;
-            top: -7vh;
-            text-align: center;
-            
-            &__main-title {
-                opacity: 0;
-            }
-            
-            &__image-pokemon {
-                max-height: auto;
-                width: 28vw;
-                position: absolute;
-                top: 40%;
-                left: 50%;
-                transform: translate(-50%, 0)
-            }
-        }
-        
-        .gallery {
-            height:100vh;
-            width:100vw;
-            display: flex;
-            display: none;
-            // background-color: #000;
-            background-color: transparent;
-            justify-content: space-between;
-            position: fixed;
-            top: 0;
-            left: 0;
-            
-            &__pokemon {
-                height: 100%;
-                width: 80%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
-                list-style: none;
-                z-index: -1;
+.header {
+    height: 20vh;
+    width: 20vw;
+    position: absolute;
+    top: -7vh;
+    text-align: center;
+    
+    &__main-title {
+        opacity: 0;
+    }
+    
+    &__image-pokemon {
+        max-height: auto;
+        width: 28vw;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, 0)
+    }
+}
+
+.gallery {
+    height:100vh;
+    width:100vw;
+    display: flex;
+    display: none;
+    // background-color: #000;
+    background-color: transparent;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+    &__pokemon {
+        height: 100%;
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        list-style: none;
+        z-index: -1;
                             
-                .pokemon {
-                    height:100%;
-                    max-width: 18%;
+        .pokemon {
+            height:100%;
+            max-width: 18%;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
@@ -177,52 +177,41 @@ input[type=number]::-webkit-outer-spin-button {
                 border-width: 8px;
                 transition-duration: 0.4s;
                 border-radius: 5vw;
-            }
-
-            &__button:hover {
-                background-color: gold;
-                border-radius: 5vw;
-                width: 23vw;
-
-                .pokemon__name-box {
-                    width: 80%;
-                }
-
-                // .pokemon__image {
-                //     height: 110%;
-                //     width: 110%;
-                // }
-
-                .name-box__name {
-                    color: #000;
+                
+                &:hover {
+                    background-color: gold;
+                    border-radius: 5vw;
+                    width: 23vw;
+                
+                    .pokemon__name-box {
+                        width: 80%;
+                    }
+                    
+                    .name-box__name {
+                        color: #000;
+                    }
                 }
             }
-            
+         
             &__image {
                 width: 30vh;
                 max-height: auto;
                 padding:10%;
-                // position: absolute;
-                // top: 50%;
-                // left: 50%;
-                // transform: translate(-50%, -50%);
-
             }
 
             &__name-box {
                 height: 7vh;
                 width: 100%;
                 display: flex;
-                // flex-flow: row nowrap;
                 justify-content: center;
                 align-items: center;
-                // border: 5px solid #000;
                 border-radius: 7vh;
                 overflow: hidden;
                 background-color: transparent;
                 transition-duration: 0.4s;
-                
+
                 .name-box {
+
                     &__name {
                         height: 7.2vh;
                         width: 75%;
@@ -234,13 +223,11 @@ input[type=number]::-webkit-outer-spin-button {
                         justify-content: center;
                         align-items: center;
                     }
-                    
+
                     &__id {
                         height: 7.2vh;
                         width: 25%;
                         font-size: 3vmin;
-                        // border-radius: 50%;
-                        // border: 1.5vh solid #000;
                         background-color: #000;
                         color: yellow;
                         display: flex;
@@ -440,14 +427,14 @@ input[type=number]::-webkit-outer-spin-button {
     
     &__box {
         // border-radius: 30px;
-        background-color: burlywood;
+        // background-color: burlywood;
+        background-color: #FFF;
         height: 100vh;
         width: 70vw;
         display: flex;
-        flex-direction: row-reverse;
+        flex-direction: column-reverse;
         justify-content: center;
         align-content: center;
-        
         overflow: hidden;
         // text-align: center;
     }
@@ -455,44 +442,61 @@ input[type=number]::-webkit-outer-spin-button {
         height: 100%;
         width: 50%;
         margin: auto;           
-    
             
         .info {
             &__name {
                 height: 8vh;
-                max-width: 20vw;
+                max-width: 80vw;
                 background-color: darkred;
-                color: red;
+                color: gold;
                 font-size: 4vw;
                 text-align: right;
                 padding: 0 1vw;
                 position: absolute;
                 top: -6.5vh;
                 right: 15vw;
-                // font-size: calc(1em + 1vw);
-                // line-height: 1em;
-                // padding: 1em;
-                // margin: 1em;
+                border-bottom: solid;
+                border-left: solid darkred;
                 
-                :after {
+                &::after {
                     content: " ";
-                    
+                    position: absolute;
+                    top: 0;
+                    right: 100%;
+                    height: 8vh;
+                    width: 5vw;
+                    background-color: darkred;
+                    clip-path: polygon(100% 0, 75% 0, 100% 100%);
                 }
             }
             
             &__id {
-                height: 7.5vh;
-                width: 3.75vw;
+                height: 6vh;
+                max-width: 3.75vw;
                 background-color: darkred;
-                color: red;
+                color: orange;
                 font-size: 3vw;
                 text-align: right;
                 padding: 0 1vw;
+                border-bottom: solid;
+                border-left: solid darkred;
                 position: absolute;
-                top: 3vh;
+                top: 3.5vh;
                 right: 15vw;
+                
+                &::after {
+                    content: " ";
+                    position: absolute;
+                    top: 0;
+                    right: 100%;
+                    height: 6vh;
+                    width: 5vw;
+                    // border-style: solid;
+                    background-color: darkred;
+                    clip-path: polygon(100% 0, 75% 0, 100% 100%);
+                }
             }
-    
+            
             &__types {                
                 text-align: center;            
             }
@@ -507,7 +511,7 @@ input[type=number]::-webkit-outer-spin-button {
     
     &__sprites {
         height: 100%;
-        width: 50%;
+        width: 100%;
         flex-direction: row;
         justify-content: center;
         align-content: center;
@@ -515,30 +519,21 @@ input[type=number]::-webkit-outer-spin-button {
         .sprites {
             
             &__artwork {
-                height: 75%;
+                height: 100%;
                 width: 100%;
+                background-color: rgb(231, 219, 44);
+                border-radius: 50%;
                 display: flex;
                 justify-content: center;
                 text-align: center;
                 
-                background-image: repeating-linear-gradient(90deg, transparent, transparent 50px,
-                rgba(255, 127, 0, 0.25) 50px, rgba(255, 127, 0, 0.25) 56px, transparent 56px, transparent 63px,
-                rgba(255, 127, 0, 0.25) 63px, rgba(255, 127, 0, 0.25) 69px, transparent 69px, transparent 116px,
-                rgba(255, 206, 0, 0.25) 116px, rgba(255, 206, 0, 0.25) 166px),
-                repeating-linear-gradient(0deg, transparent, transparent 50px, rgba(255, 127, 0, 0.25) 50px,
-                rgba(255, 127, 0, 0.25) 56px, transparent 56px, transparent 63px, rgba(255, 127, 0, 0.25) 63px,
-                rgba(255, 127, 0, 0.25) 69px, transparent 69px, transparent 116px, rgba(255, 206, 0, 0.25) 116px,
-                rgba(255, 206, 0, 0.25) 166px),
-                repeating-linear-gradient(-45deg, transparent, transparent 5px, rgba(143, 77, 63, 0.25) 5px,
-                rgba(143, 77, 63, 0.25) 10px),
-                repeating-linear-gradient(45deg, transparent, transparent 5px, rgba(143, 77, 63, 0.25) 5px,
-                rgba(143, 77, 63, 0.25) 10px);
+
                 
                 .artwork__image {
-                    max-height: 90%;
-                    max-width: 90%;
+                    max-height: 200%;
+                    max-width: 200%;
                     display: block;
-                    margin: auto;
+                    margin:  8% auto;
                 }
             }
             
@@ -562,3 +557,18 @@ input[type=number]::-webkit-outer-spin-button {
         }
     }
 }
+
+
+
+// background-image: repeating-linear-gradient(90deg, transparent, transparent 50px,
+// rgba(255, 127, 0, 0.25) 50px, rgba(255, 127, 0, 0.25) 56px, transparent 56px, transparent 63px,
+// rgba(255, 127, 0, 0.25) 63px, rgba(255, 127, 0, 0.25) 69px, transparent 69px, transparent 116px,
+// rgba(255, 206, 0, 0.25) 116px, rgba(255, 206, 0, 0.25) 166px),
+// repeating-linear-gradient(0deg, transparent, transparent 50px, rgba(255, 127, 0, 0.25) 50px,
+// rgba(255, 127, 0, 0.25) 56px, transparent 56px, transparent 63px, rgba(255, 127, 0, 0.25) 63px,
+// rgba(255, 127, 0, 0.25) 69px, transparent 69px, transparent 116px, rgba(255, 206, 0, 0.25) 116px,
+// rgba(255, 206, 0, 0.25) 166px),
+// repeating-linear-gradient(-45deg, transparent, transparent 5px, rgba(143, 77, 63, 0.25) 5px,
+// rgba(143, 77, 63, 0.25) 10px),
+// repeating-linear-gradient(45deg, transparent, transparent 5px, rgba(143, 77, 63, 0.25) 5px,
+// rgba(143, 77, 63, 0.25) 10px);
