@@ -542,16 +542,16 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .detail__box {
-  background-color: burlywood;
+  background-color: #FFF;
   height: 100vh;
   width: 70vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -568,32 +568,56 @@ input[type=number]::-webkit-outer-spin-button {
 
 .detail__info .info__name {
   height: 8vh;
-  max-width: 20vw;
+  max-width: 80vw;
   background-color: darkred;
-  color: red;
+  color: gold;
   font-size: 4vw;
   text-align: right;
   padding: 0 1vw;
   position: absolute;
   top: -6.5vh;
   right: 15vw;
+  border-bottom: solid;
+  border-left: solid darkred;
 }
 
-.detail__info .info__name :after {
+.detail__info .info__name::after {
   content: " ";
+  position: absolute;
+  top: 0;
+  right: 100%;
+  height: 8vh;
+  width: 5vw;
+  background-color: darkred;
+  -webkit-clip-path: polygon(100% 0, 75% 0, 100% 100%);
+          clip-path: polygon(100% 0, 75% 0, 100% 100%);
 }
 
 .detail__info .info__id {
-  height: 7.5vh;
-  width: 3.75vw;
+  height: 6vh;
+  max-width: 3.75vw;
   background-color: darkred;
-  color: red;
+  color: orange;
   font-size: 3vw;
   text-align: right;
   padding: 0 1vw;
+  border-bottom: solid;
+  border-left: solid darkred;
   position: absolute;
-  top: 3vh;
+  top: 3.5vh;
   right: 15vw;
+}
+
+.detail__info .info__id::after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 100%;
+  height: 6vh;
+  width: 5vw;
+  background-color: darkred;
+  -webkit-clip-path: polygon(100% 0, 75% 0, 100% 100%);
+          clip-path: polygon(100% 0, 75% 0, 100% 100%);
 }
 
 .detail__info .info__types {
@@ -610,7 +634,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .detail__sprites {
   height: 100%;
-  width: 50%;
+  width: 100%;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -623,8 +647,10 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .detail__sprites .sprites__artwork {
-  height: 75%;
+  height: 100%;
   width: 100%;
+  background-color: #e7db2c;
+  border-radius: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -632,14 +658,13 @@ input[type=number]::-webkit-outer-spin-button {
       -ms-flex-pack: center;
           justify-content: center;
   text-align: center;
-  background-image: repeating-linear-gradient(90deg, transparent, transparent 50px, rgba(255, 127, 0, 0.25) 50px, rgba(255, 127, 0, 0.25) 56px, transparent 56px, transparent 63px, rgba(255, 127, 0, 0.25) 63px, rgba(255, 127, 0, 0.25) 69px, transparent 69px, transparent 116px, rgba(255, 206, 0, 0.25) 116px, rgba(255, 206, 0, 0.25) 166px), repeating-linear-gradient(0deg, transparent, transparent 50px, rgba(255, 127, 0, 0.25) 50px, rgba(255, 127, 0, 0.25) 56px, transparent 56px, transparent 63px, rgba(255, 127, 0, 0.25) 63px, rgba(255, 127, 0, 0.25) 69px, transparent 69px, transparent 116px, rgba(255, 206, 0, 0.25) 116px, rgba(255, 206, 0, 0.25) 166px), repeating-linear-gradient(-45deg, transparent, transparent 5px, rgba(143, 77, 63, 0.25) 5px, rgba(143, 77, 63, 0.25) 10px), repeating-linear-gradient(45deg, transparent, transparent 5px, rgba(143, 77, 63, 0.25) 5px, rgba(143, 77, 63, 0.25) 10px);
 }
 
 .detail__sprites .sprites__artwork .artwork__image {
-  max-height: 90%;
-  max-width: 90%;
+  max-height: 200%;
+  max-width: 200%;
   display: block;
-  margin: auto;
+  margin: 8% auto;
 }
 
 .detail__sprites .sprites__versions {
