@@ -96,6 +96,8 @@ async function getPokemonDetail (id) {
         </div>
         <div class="detail__sprites">
             <div class="sprites__artwork">
+                <div class="artwork__podium"></div>
+                <div class="artwork__light"></div>
                 <img class="artwork__image" 
                 src="${ data.sprites.other["official-artwork"].front_default }" 
                 alt="pixel image of ${ data.name }">
