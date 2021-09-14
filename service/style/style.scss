@@ -512,14 +512,14 @@ input[type=number]::-webkit-outer-spin-button {
     &__sprites {
         height: 100%;
         width: 100%;
-        flex-direction: row;
-        justify-content: center;
-        align-content: center;
+        // flex-direction: row;
+        // justify-content: center;
+        // align-content: center;
         
         .sprites {
             
             &__artwork {
-                height: 100%;
+                height: 75vh;
                 width: 100%;
                 background-color: rgb(231, 219, 44);
                 // border-radius: 50%;
@@ -529,27 +529,31 @@ input[type=number]::-webkit-outer-spin-button {
                 
                 .artwork__image {
                     background-color: orange;
-                    max-height: 200%;
-                    max-width: 200%;
+                    max-height: 100vmin;
+                    max-width: 100vmin;
                     display: block;
-                    margin:  8%;
+                    // margin:  8%;
                 }
             }
             
             &__versions {
-                width: 100%;
-                height: 25%;
+                height: 25vh;
+                width: 70%;
                 background-image: repeating-linear-gradient( green, green 0.1vh, transparent 1vh, transparent 2vh),
                     repeating-linear-gradient(90deg, green, green 0.1vh, transparent 1vh, transparent 2vh),
                     repeating-linear-gradient(rgb(24, 24, 26), rgb(24, 24, 26) 5%);
+                position: absolute;
+                bottom: 0;
+                left: 15%;
                 display: flex;
                 flex-direction: row;
                 justify-content: space-around; 
                 align-items: center;
+                border-top:0.5vh solid red;
                 
                 .versions__image {
-                    max-height: 80%;
-                    width: auto;
+                    height: 80%;
+                    width: 18%;
                     padding: 2%;     
                 }
             }
@@ -572,7 +576,6 @@ input[type=number]::-webkit-outer-spin-button {
             border: 1vh solid red;
         
             &--right {
-            //    background: burlywood; 
             background-image: repeating-linear-gradient(-45deg, red, red 2%, #FFF 2.01%, #FFF 4%);
             z-index: 4;
         }
