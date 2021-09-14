@@ -199,12 +199,13 @@ input[type=number]::-webkit-outer-spin-button {
             }
             
             &__image {
-                height: 90%;
-                width: 90%;
+                width: 30vh;
+                max-height: auto;
+                padding:10%;
                 // position: absolute;
-                // top: 0;
-                // left: 0;
-                // transform: translate(-100%, -50%);
+                // top: 50%;
+                // left: 50%;
+                // transform: translate(-50%, -50%);
 
             }
 
@@ -212,6 +213,7 @@ input[type=number]::-webkit-outer-spin-button {
                 height: 7vh;
                 width: 100%;
                 display: flex;
+                // flex-flow: row nowrap;
                 justify-content: center;
                 align-items: center;
                 // border: 5px solid #000;
@@ -224,7 +226,7 @@ input[type=number]::-webkit-outer-spin-button {
                     &__name {
                         height: 7.2vh;
                         width: 75%;
-                        font-size: 4vh;
+                        font-size: 3vmin;
                         color: #000;
                         text-transform: uppercase;
                         background-color: red;
@@ -236,7 +238,7 @@ input[type=number]::-webkit-outer-spin-button {
                     &__id {
                         height: 7.2vh;
                         width: 25%;
-                        font-size: 4vh;
+                        font-size: 3vmin;
                         // border-radius: 50%;
                         // border: 1.5vh solid #000;
                         background-color: #000;
@@ -288,7 +290,7 @@ input[type=number]::-webkit-outer-spin-button {
                 height: 20%;
                 width: 50%;
                 background: red;
-                // background: repeating-linear-gradient(90deg, red, red 20%, yellow 33.3% );
+                background: repeating-linear-gradient(90deg, red, red 20%, yellow 33.3% );
                 transform: skewX(-40deg);
                 transition: 0.4s;
 
@@ -437,10 +439,10 @@ input[type=number]::-webkit-outer-spin-button {
     align-items: center;
     
     &__box {
-        border-radius: 30px;
+        // border-radius: 30px;
         background-color: burlywood;
-        height: 90vh;
-        max-width: 70vw;
+        height: 100vh;
+        width: 70vw;
         display: flex;
         flex-direction: row-reverse;
         justify-content: center;
@@ -457,13 +459,38 @@ input[type=number]::-webkit-outer-spin-button {
             
         .info {
             &__name {
-                color: darkred;
+                height: 8vh;
+                max-width: 20vw;
+                background-color: darkred;
+                color: red;
                 font-size: 4vw;
-                text-align: center;
+                text-align: right;
+                padding: 0 1vw;
+                position: absolute;
+                top: -6.5vh;
+                right: 15vw;
                 // font-size: calc(1em + 1vw);
                 // line-height: 1em;
                 // padding: 1em;
                 // margin: 1em;
+                
+                :after {
+                    content: " ";
+                    
+                }
+            }
+            
+            &__id {
+                height: 7.5vh;
+                width: 3.75vw;
+                background-color: darkred;
+                color: red;
+                font-size: 3vw;
+                text-align: right;
+                padding: 0 1vw;
+                position: absolute;
+                top: 3vh;
+                right: 15vw;
             }
     
             &__types {                
@@ -527,8 +554,8 @@ input[type=number]::-webkit-outer-spin-button {
                 align-items: center;
                 
                 .versions__image {
-                    max-height: 100%;
-                    width: 33.33%;
+                    max-height: 80%;
+                    width: auto;
                     padding: 2%;     
                 }
             }

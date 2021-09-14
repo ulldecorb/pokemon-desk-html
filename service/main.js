@@ -79,7 +79,8 @@ async function getPokemonDetail (id) {
     
     <section class="detail__box">
         <div class="detail__info">
-            <h2 class="info__name">#${data.id}-${data.name.toUpperCase()}</h2>
+            <h2 class="info__name">${data.name.toUpperCase()}</h2>
+            <h2 class="info__id">${data.id}</h2>
             <h3 class="info__types">
                 TYPE: ${data.types.map((item) => item.type.name).join("<br>")}
             </h3>
@@ -102,13 +103,13 @@ async function getPokemonDetail (id) {
             <div class="sprites__versions"> 
                 <img class="versions__image"
                     src="${ data.sprites.versions["generation-iii"].emerald.front_default || "https://image.flaticon.com/icons/png/512/528/528101.png" }" 
-                    alt="pixel image of ${ data.name }">
+                    alt="generation 3 pixel image of ${ data.name }">
                 <img class="versions__image" 
                     src="${ data.sprites.versions["generation-iv"]["diamond-pearl"].front_default || "https://image.flaticon.com/icons/png/512/528/528101.png" }" 
-                    alt="pixel image of ${ data.name }">
+                    alt="generation 4 pixel image of ${ data.name }">
                 <img class="versions__image" 
                     src="${ data.sprites.versions["generation-v"]["black-white"].animated.front_shiny || "https://image.flaticon.com/icons/png/512/528/528101.png" }" 
-                    alt="pixel image of ${ data.name }">
+                    alt="generation 5 pixel image of ${ data.name }">
             </div>
         </div>
     </section>
