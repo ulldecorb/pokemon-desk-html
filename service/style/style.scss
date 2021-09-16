@@ -35,6 +35,7 @@ input[type=number]::-webkit-outer-spin-button {
         transform: translate(-50%, -50%);
         background-color: #000;
         z-index: -2;
+        animation: middle-move 6s ease 0s infinite normal none;
     }
     
     &__bottom{
@@ -42,26 +43,65 @@ input[type=number]::-webkit-outer-spin-button {
         width: 100vw;
         background: radial-gradient(#FFF 5%, rgb(189, 186, 186) 70% );
         border-top: 1vh solid rgb(216, 216, 216);
+        animation: bottom-move 6s ease 0s infinite normal none;
     }
     
+    @keyframes middle-move {
+        80% {height: 7vw}
+        85% {height: 9vw}
+        90% {height: 7vw}
+        95% {height: 9vw}
+        100% {height: 7vw}
+    } 
+    
+    @keyframes bottom-move {
+        80% {height: 44vh}
+        85% {height: 42vh}
+        90% {height: 44vh}
+        95% {height: 42vh}
+        100% {height: 44vh}
+    } 
+    
+    @keyframes circle-box-move {
+        80% {height: 80vh; width: 80vh;}
+        83% {height: 88vh; width: 88vh;}
+        90% {height: 80vh; width: 80vh;}
+        93% {height: 88vh; width: 88vh;}
+        100% {height: 80vh; width: 80vh;}
+    } 
+    
+    @keyframes inner-circle-move {
+        80% {height: 30vmin; width: 30vmin;}
+        82% {height: 45vmin; width: 45vmin;}
+        90% {height: 30vmin; width: 30vmin;}
+        92% {height: 45vmin; width: 45vmin;}
+        100% {height: 30vmin; width: 30vmin;}
+    } 
+    
+    @keyframes outer-circle-move {
+        80% {height: 60vmin; width: 60vmin;}
+        83% {height: 70vmin; width: 70vmin;}
+        90% {height: 60vmin; width: 60vmin;}
+        93% {height: 70vmin; width: 70vmin;}
+        100% {height: 60vmin; width: 60vmin;}
+    } 
+    
     &__circle-box {
-        height:80vh;
-        width:80vh;
+        height:80vmin;
+        width:80vmin;
         border-radius: 50%;
         background-color: #000;
         position:absolute;
         top: 50%;
         left: 50%;
         transform: translate( -50%, -50%);
-        // box-shadow: 0 0 1vh  rgb(216, 216, 216);
+        animation: circle-box-move 6s ease 0s infinite normal none;
     }
     
     &__inner-circle {
-        // background: radial-gradient(#FFF 5%, rgb(189, 186, 186) 70% );
         height: 30vmin;
         width: 30vmin;
         border-radius: 50%;
-        // background-color: rgb(189, 186, 186);
         border: 0.5vh solid rgb(233, 233, 233);
         box-shadow:  1vh 1vh 10px 4px rgb(189, 186, 186);
         position:absolute;
@@ -69,47 +109,72 @@ input[type=number]::-webkit-outer-spin-button {
         left: 50%;
         transform: translate( -50%, -50%);
         z-index: 2;
+        animation: inner-circle-move 6s ease 0s infinite normal none;
+
+    }
+    
+    &__outer-circle {
+        box-shadow:  inset 1vh 1vh 5px 4px rgb(189, 186, 186);
+        border: 0.5vh solid #000;
+        height: 60vmin;
+        width: 60vmin;
+        border-radius: 50%;
+        background-color: rgb(219, 219, 219);
+        position:absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate( -50%, -50%);
+        cursor: pointer;
+        z-index: 2;
+        animation: outer-circle-move 6s ease 0s infinite normal none;
+
         
-        // &:hover {
-            //     background-color: orange;
-            // }
-        }
-        
-        &__outer-circle {
-            // background: radial-gradient(#FFF 5%, rgb(189, 186, 186) 70% );
-            box-shadow:  inset 1vh 1vh 5px 4px rgb(189, 186, 186);
-            border: 0.5vh solid #000;
-            height: 60vmin;
-            width: 60vmin;
-            border-radius: 50%;
-            background-color: rgb(219, 219, 219);
-            // border: 12vh solid rgb(236, 236, 236);
-            position:absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate( -50%, -50%);
-            cursor: pointer;
-            z-index: 2;
+        &:hover {
+            box-shadow:  inset 1vh 1vh 1vh 0 rgba(255, 0, 0, 0.527);
+            background-color: rgb(255, 166, 0);
+
+
+
+            .background__hover-text {
+                color: blue;
+            }
+
+            .background__inner-circle {
+                border: 0.5vh solid rgba(255, 0, 0, 0.521);
+                box-shadow: 1vh 1vh 1vh 0 rgba(255, 0, 0, 0.452);
+                
+            }
+            .background__middle {
+                    background-color: yellow;
+            }
             
-            &:hover {
-                box-shadow:  inset 1vh 1vh 0px 4px red;
-                background-color: orange;
-                .background__inner-circle {
-                    border: 0.5vh solid red;
-                    box-shadow: 1vh 1vh red;
-                    
-                }
-                .background__middle {
-                        background-color: yellow;
-                    }
-                    
-                    .background__circle-box {
-                        background-color: yellow;
-                    }
-                }
+            .background__circle-box {
+                background-color: yellow;
             }
         }
-        
+    }
+
+    &__hover-text {
+        height: 60vmin;
+        width: 60vmin;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        p {
+            font-size: 5.5vh;
+            margin: auto;
+            border: 1px solid red;
+        }
+
+    }
+}
+
 .header {
     height: 20vh;
     width: 20vw;
