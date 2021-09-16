@@ -68,6 +68,111 @@ input[type=number]::-webkit-outer-spin-button {
           animation: bottom-move 6s ease 0s infinite normal none;
 }
 
+.background__circle-box {
+  height: 80vmin;
+  width: 80vmin;
+  border-radius: 50%;
+  background-color: #000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-animation: circle-box-move 6s ease 0s infinite normal none;
+          animation: circle-box-move 6s ease 0s infinite normal none;
+}
+
+.background__inner-circle {
+  height: 30vmin;
+  width: 30vmin;
+  border-radius: 50%;
+  border: 0.5vh solid #e9e9e9;
+  -webkit-box-shadow: 1vh 1vh 10px 4px #bdbaba;
+          box-shadow: 1vh 1vh 10px 4px #bdbaba;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 2;
+  -webkit-animation: inner-circle-move 6s ease 0s infinite normal none;
+          animation: inner-circle-move 6s ease 0s infinite normal none;
+}
+
+.background__outer-circle {
+  -webkit-box-shadow: inset 1vh 1vh 5px 4px #bdbaba;
+          box-shadow: inset 1vh 1vh 5px 4px #bdbaba;
+  border: 0.5vh solid #000;
+  height: 60vmin;
+  width: 60vmin;
+  border-radius: 50%;
+  background-color: #dbdbdb;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  cursor: pointer;
+  z-index: 2;
+  -webkit-animation: outer-circle-move 6s ease 0s infinite normal none;
+          animation: outer-circle-move 6s ease 0s infinite normal none;
+}
+
+.background__outer-circle:hover {
+  -webkit-box-shadow: inset 1vh 1vh 1vh 0 rgba(255, 0, 0, 0.527);
+          box-shadow: inset 1vh 1vh 1vh 0 rgba(255, 0, 0, 0.527);
+  background-color: #ffa600;
+}
+
+.background__outer-circle:hover .background__hover-text p {
+  color: blue;
+}
+
+.background__outer-circle:hover .background__inner-circle {
+  border: 0.5vh solid rgba(255, 0, 0, 0.521);
+  -webkit-box-shadow: 1vh 1vh 1vh 0 rgba(255, 0, 0, 0.452);
+          box-shadow: 1vh 1vh 1vh 0 rgba(255, 0, 0, 0.452);
+}
+
+.background__outer-circle:hover .background__middle {
+  background-color: yellow;
+}
+
+.background__outer-circle:hover .background__circle-box {
+  background-color: yellow;
+}
+
+.background__hover-text {
+  height: 30vmin;
+  width: 30vmin;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.background__hover-text p {
+  padding-top: 7vmin;
+  height: 20vmin;
+  width: 20vmin;
+  -webkit-animation: text-move 6s ease 0s infinite normal none;
+          animation: text-move 6s ease 0s infinite normal none;
+  font-size: 5.5vh;
+  margin: auto;
+  color: transparent;
+}
+
 @-webkit-keyframes middle-move {
   80% {
     height: 7vw;
@@ -278,104 +383,40 @@ input[type=number]::-webkit-outer-spin-button {
   }
 }
 
-.background__circle-box {
-  height: 80vmin;
-  width: 80vmin;
-  border-radius: 50%;
-  background-color: #000;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  -webkit-animation: circle-box-move 6s ease 0s infinite normal none;
-          animation: circle-box-move 6s ease 0s infinite normal none;
+@-webkit-keyframes text-move {
+  80% {
+    font-size: 5.5vh;
+  }
+  82% {
+    font-size: 7.5vh;
+  }
+  90% {
+    font-size: 5.5vh;
+  }
+  92% {
+    font-size: 7.5vh;
+  }
+  100% {
+    font-size: 5.5vh;
+  }
 }
 
-.background__inner-circle {
-  height: 30vmin;
-  width: 30vmin;
-  border-radius: 50%;
-  border: 0.5vh solid #e9e9e9;
-  -webkit-box-shadow: 1vh 1vh 10px 4px #bdbaba;
-          box-shadow: 1vh 1vh 10px 4px #bdbaba;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  z-index: 2;
-  -webkit-animation: inner-circle-move 6s ease 0s infinite normal none;
-          animation: inner-circle-move 6s ease 0s infinite normal none;
-}
-
-.background__outer-circle {
-  -webkit-box-shadow: inset 1vh 1vh 5px 4px #bdbaba;
-          box-shadow: inset 1vh 1vh 5px 4px #bdbaba;
-  border: 0.5vh solid #000;
-  height: 60vmin;
-  width: 60vmin;
-  border-radius: 50%;
-  background-color: #dbdbdb;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  cursor: pointer;
-  z-index: 2;
-  -webkit-animation: outer-circle-move 6s ease 0s infinite normal none;
-          animation: outer-circle-move 6s ease 0s infinite normal none;
-}
-
-.background__outer-circle:hover {
-  -webkit-box-shadow: inset 1vh 1vh 1vh 0 rgba(255, 0, 0, 0.527);
-          box-shadow: inset 1vh 1vh 1vh 0 rgba(255, 0, 0, 0.527);
-  background-color: #ffa600;
-}
-
-.background__outer-circle:hover .background__hover-text {
-  color: blue;
-}
-
-.background__outer-circle:hover .background__inner-circle {
-  border: 0.5vh solid rgba(255, 0, 0, 0.521);
-  -webkit-box-shadow: 1vh 1vh 1vh 0 rgba(255, 0, 0, 0.452);
-          box-shadow: 1vh 1vh 1vh 0 rgba(255, 0, 0, 0.452);
-}
-
-.background__outer-circle:hover .background__middle {
-  background-color: yellow;
-}
-
-.background__outer-circle:hover .background__circle-box {
-  background-color: yellow;
-}
-
-.background__hover-text {
-  height: 60vmin;
-  width: 60vmin;
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.background__hover-text p {
-  font-size: 5.5vh;
-  margin: auto;
-  border: 1px solid red;
+@keyframes text-move {
+  80% {
+    font-size: 5.5vh;
+  }
+  82% {
+    font-size: 7.5vh;
+  }
+  90% {
+    font-size: 5.5vh;
+  }
+  92% {
+    font-size: 7.5vh;
+  }
+  100% {
+    font-size: 5.5vh;
+  }
 }
 
 .header {

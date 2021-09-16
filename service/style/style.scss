@@ -46,6 +46,96 @@ input[type=number]::-webkit-outer-spin-button {
         animation: bottom-move 6s ease 0s infinite normal none;
     }
     
+    &__circle-box {
+        height:80vmin;
+        width:80vmin;
+        border-radius: 50%;
+        background-color: #000;
+        position:absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate( -50%, -50%);
+        animation: circle-box-move 6s ease 0s infinite normal none;
+    }
+    
+    &__inner-circle {
+        height: 30vmin;
+        width: 30vmin;
+        border-radius: 50%;
+        border: 0.5vh solid rgb(233, 233, 233);
+        box-shadow:  1vh 1vh 10px 4px rgb(189, 186, 186);
+        position:absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate( -50%, -50%);
+        z-index: 2;
+        animation: inner-circle-move 6s ease 0s infinite normal none;
+        
+    }
+    
+    &__outer-circle {
+        box-shadow:  inset 1vh 1vh 5px 4px rgb(189, 186, 186);
+        border: 0.5vh solid #000;
+        height: 60vmin;
+        width: 60vmin;
+        border-radius: 50%;
+        background-color: rgb(219, 219, 219);
+        position:absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate( -50%, -50%);
+        cursor: pointer;
+        z-index: 2;
+        animation: outer-circle-move 6s ease 0s infinite normal none;
+        
+        &:hover {
+            box-shadow:  inset 1vh 1vh 1vh 0 rgba(255, 0, 0, 0.527);
+            background-color: rgb(255, 166, 0);
+            
+            .background__hover-text p {
+                color: blue;
+            }
+            
+            .background__inner-circle {
+                border: 0.5vh solid rgba(255, 0, 0, 0.521);
+                box-shadow: 1vh 1vh 1vh 0 rgba(255, 0, 0, 0.452);
+                
+            }
+            .background__middle {
+                background-color: yellow;
+            }
+            
+            .background__circle-box {
+                background-color: yellow;
+            }
+        }
+    }
+    
+    &__hover-text {
+        height: 30vmin;
+        width: 30vmin;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        p {
+            padding-top: 7vmin;
+            height: 20vmin;
+            width: 20vmin;
+            animation: text-move 6s ease 0s infinite normal none;
+            font-size: 5.5vh;
+            margin: auto;
+            color:transparent;
+        }
+
+    }
+
+        
     @keyframes middle-move {
         80% {height: 7vw}
         85% {height: 9vw}
@@ -84,94 +174,14 @@ input[type=number]::-webkit-outer-spin-button {
         90% {height: 60vmin; width: 60vmin;}
         93% {height: 70vmin; width: 70vmin;}
         100% {height: 60vmin; width: 60vmin;}
-    } 
-    
-    &__circle-box {
-        height:80vmin;
-        width:80vmin;
-        border-radius: 50%;
-        background-color: #000;
-        position:absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate( -50%, -50%);
-        animation: circle-box-move 6s ease 0s infinite normal none;
     }
     
-    &__inner-circle {
-        height: 30vmin;
-        width: 30vmin;
-        border-radius: 50%;
-        border: 0.5vh solid rgb(233, 233, 233);
-        box-shadow:  1vh 1vh 10px 4px rgb(189, 186, 186);
-        position:absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate( -50%, -50%);
-        z-index: 2;
-        animation: inner-circle-move 6s ease 0s infinite normal none;
-
-    }
-    
-    &__outer-circle {
-        box-shadow:  inset 1vh 1vh 5px 4px rgb(189, 186, 186);
-        border: 0.5vh solid #000;
-        height: 60vmin;
-        width: 60vmin;
-        border-radius: 50%;
-        background-color: rgb(219, 219, 219);
-        position:absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate( -50%, -50%);
-        cursor: pointer;
-        z-index: 2;
-        animation: outer-circle-move 6s ease 0s infinite normal none;
-
-        
-        &:hover {
-            box-shadow:  inset 1vh 1vh 1vh 0 rgba(255, 0, 0, 0.527);
-            background-color: rgb(255, 166, 0);
-
-
-
-            .background__hover-text {
-                color: blue;
-            }
-
-            .background__inner-circle {
-                border: 0.5vh solid rgba(255, 0, 0, 0.521);
-                box-shadow: 1vh 1vh 1vh 0 rgba(255, 0, 0, 0.452);
-                
-            }
-            .background__middle {
-                    background-color: yellow;
-            }
-            
-            .background__circle-box {
-                background-color: yellow;
-            }
-        }
-    }
-
-    &__hover-text {
-        height: 60vmin;
-        width: 60vmin;
-        border-radius: 50%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        p {
-            font-size: 5.5vh;
-            margin: auto;
-            border: 1px solid red;
-        }
-
+    @keyframes text-move {
+        80% {font-size: 5.5vh;}
+        82% {font-size: 7.5vh;}
+        90% {font-size: 5.5vh;}
+        92% {font-size: 7.5vh;}
+        100% {font-size: 5.5vh;}
     }
 }
 
@@ -417,10 +427,7 @@ input[type=number]::-webkit-outer-spin-button {
                 margin: -20px 0.8vw;
                 vertical-align: text-bottom;
 
-                // &[value="SEARCH"] {
-                //     color:pink;
-                //     margin: 0 0 1vh 15px;
-                // }
+                // &[value] {margin: auto;}
             }    
 
             &__tooltip {
