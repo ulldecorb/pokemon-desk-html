@@ -1,4 +1,4 @@
-* {font-family: monospace;}
+* {font-family: 'Audiowide';}
 
 body {
     display: flex;
@@ -317,7 +317,6 @@ input[type=number]::-webkit-outer-spin-button {
     &__navigation-button {
         height: 100%;
         width: 10%;
-        // background-color: #000;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -326,7 +325,6 @@ input[type=number]::-webkit-outer-spin-button {
         .navigation-button {
             height: 15vh;
             width: 15vh;
-            // border-radius: 1vw;
             border-radius: 50%;
             border: none;
             background-color: transparent;
@@ -342,9 +340,7 @@ input[type=number]::-webkit-outer-spin-button {
                 height: 20%;
                 width: 50%;
                 background-color: red;
-                // background: repeating-linear-gradient(90deg, red, red 20%, yellow 33.3% );
                 transition: 0.4s;
-
                 transform: skewX(40deg);
             }
             
@@ -366,7 +362,6 @@ input[type=number]::-webkit-outer-spin-button {
             .navigation-button__upLeft-downRigth {
                 animation: mymove infinite;
                 animation-duration: 3s;
-                background: repeating-linear-gradient(0deg, yellow, yellow 33.33%, red 33.3%,yellow 33.3 );
                 
                 background-color: orange;
             }
@@ -440,6 +435,7 @@ input[type=number]::-webkit-outer-spin-button {
                 justify-content: center;
                 align-items: center;
                 text-align: center;
+                font-size: 0.9em;
                 border-radius: 6px;
                 padding: 5px 0;
                 position: absolute;
@@ -498,8 +494,6 @@ input[type=number]::-webkit-outer-spin-button {
     align-items: center;
     
     &__box {
-        // border-radius: 30px;
-        // background-color: burlywood;
         background-color: #FFF;
         height: 100vh;
         width: 70vw; 
@@ -508,12 +502,13 @@ input[type=number]::-webkit-outer-spin-button {
         justify-content: center;
         align-content: center;
         overflow: hidden;
-        // text-align: center;
     }
+
     &__info {
         height: 100%;
         width: 50%;
-        margin: auto;           
+        margin: auto;
+        z-index: 10;
             
         .info {
             &__name {
@@ -584,9 +579,6 @@ input[type=number]::-webkit-outer-spin-button {
     &__sprites {
         height: 100%;
         width: 100%;
-        // flex-direction: row;
-        // justify-content: center;
-        // align-content: center;
         
         .sprites {
             
@@ -670,18 +662,18 @@ input[type=number]::-webkit-outer-spin-button {
         animation: open-panel 2s ease 0s 1 alternate forwards;
 
         .panel {
-            height: 98vh;
+            height: 100vh;
             width: 50vw;
-            border: 1vh solid red;
+            // border: 1vh solid red;
         
             &--right {
-            background-image: repeating-linear-gradient(-45deg, red, red 2%, #FFF 2.01%, #FFF 4%);
+            background-image: repeating-linear-gradient(-45deg, red, red 2%, #000 2.01%, #000 4%);
             z-index: 4;
         }
         
         &--left {
             background: palevioletred;               
-            background-image: repeating-linear-gradient(45deg, red, red 2%, #FFF 2.01%, #FFF 4%);
+            background-image: repeating-linear-gradient(45deg, red, red 2%, #000 2.01%, #000 4%);
                 z-index:4;
             }
         }
