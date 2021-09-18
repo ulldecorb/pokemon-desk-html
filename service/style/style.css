@@ -1,5 +1,5 @@
 * {
-  font-family: monospace;
+  font-family: 'Audiowide';
 }
 
 body {
@@ -667,7 +667,6 @@ input[type=number]::-webkit-outer-spin-button {
           animation: mymove infinite;
   -webkit-animation-duration: 3s;
           animation-duration: 3s;
-  background: repeating-linear-gradient(0deg, yellow, yellow 33.33%, red 33.3%, yellow 33.3);
   background-color: orange;
 }
 
@@ -771,6 +770,7 @@ input[type=number]::-webkit-outer-spin-button {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
+  font-size: 0.9em;
   border-radius: 6px;
   padding: 5px 0;
   position: absolute;
@@ -855,6 +855,7 @@ input[type=number]::-webkit-outer-spin-button {
   height: 100%;
   width: 50%;
   margin: auto;
+  z-index: 10;
 }
 
 .detail__info .info__name {
@@ -1015,19 +1016,18 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .detail__panel .panel {
-  height: 98vh;
+  height: 100vh;
   width: 50vw;
-  border: 1vh solid red;
 }
 
 .detail__panel .panel--right {
-  background-image: repeating-linear-gradient(-45deg, red, red 2%, #FFF 2.01%, #FFF 4%);
+  background-image: repeating-linear-gradient(-45deg, red, red 2%, #000 2.01%, #000 4%);
   z-index: 4;
 }
 
 .detail__panel .panel--left {
   background: palevioletred;
-  background-image: repeating-linear-gradient(45deg, red, red 2%, #FFF 2.01%, #FFF 4%);
+  background-image: repeating-linear-gradient(45deg, red, red 2%, #000 2.01%, #000 4%);
   z-index: 4;
 }
 
