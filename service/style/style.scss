@@ -508,7 +508,7 @@ input[type=number]::-webkit-outer-spin-button {
         height: 100%;
         width: 50%;
         margin: auto;
-        z-index: 10;
+        z-index: 3;
             
         .info {
             &__name {
@@ -518,19 +518,19 @@ input[type=number]::-webkit-outer-spin-button {
                 color: gold;
                 font-size: 4vw;
                 text-align: right;
-                padding: 0 1vw;
+                padding: 0 1vh 1vw 1vh;
                 position: absolute;
                 top: -6.5vh;
                 right: 15vw;
                 border-bottom: solid;
-                border-left: solid darkred;
                 
                 &::after {
+                    // border-left: solid darkred;
                     content: " ";
                     position: absolute;
                     top: 0;
                     right: 100%;
-                    height: 8vh;
+                    height: 10vh;
                     width: 5vw;
                     background-color: darkred;
                     clip-path: polygon(100% 0, 75% 0, 100% 100%);
@@ -539,16 +539,16 @@ input[type=number]::-webkit-outer-spin-button {
             
             &__id {
                 height: 6vh;
-                max-width: 3.75vw;
+                max-width: 5.75vw;
                 background-color: darkred;
                 color: orange;
                 font-size: 3vw;
                 text-align: right;
-                padding: 0 1vw;
+                padding: 0 1vh 1vw 1vh;
                 border-bottom: solid;
                 border-left: solid darkred;
                 position: absolute;
-                top: 3.5vh;
+                top: 5.5vh;
                 right: 15vw;
                 
                 &::after {
@@ -556,7 +556,7 @@ input[type=number]::-webkit-outer-spin-button {
                     position: absolute;
                     top: 0;
                     right: 100%;
-                    height: 6vh;
+                    height: 8vh;
                     width: 5vw;
                     // border-style: solid;
                     background-color: darkred;
