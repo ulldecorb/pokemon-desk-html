@@ -93,7 +93,9 @@ input[type=number]::-webkit-outer-spin-button {
             background-color: rgb(255, 166, 0);
             
             .background__hover-text p {
-                color: blue;
+                color: darkred;
+                font-weight: bold;
+                text-shadow: 0 0 1vh 10px yellow;
             }
             
             .background__inner-circle {
@@ -132,9 +134,7 @@ input[type=number]::-webkit-outer-spin-button {
             margin: auto;
             color:transparent;
         }
-
     }
-
         
     @keyframes middle-move {
         80% {height: 7vw}
@@ -211,7 +211,6 @@ input[type=number]::-webkit-outer-spin-button {
     width:100vw;
     display: flex;
     display: none;
-    // background-color: #000;
     background-color: transparent;
     justify-content: space-between;
     position: fixed;
@@ -351,7 +350,6 @@ input[type=number]::-webkit-outer-spin-button {
                 background: repeating-linear-gradient(90deg, red, red 20%, yellow 33.3% );
                 transform: skewX(-40deg);
                 transition: 0.4s;
-
             }
         }
         
@@ -362,7 +360,6 @@ input[type=number]::-webkit-outer-spin-button {
             .navigation-button__upLeft-downRigth {
                 animation: mymove infinite;
                 animation-duration: 3s;
-                
                 background-color: orange;
             }
             @keyframes mymove {
@@ -391,7 +388,6 @@ input[type=number]::-webkit-outer-spin-button {
         align-items: center;
         cursor: pointer;
         border-top: transparent;
-        // cursor: pointer;
         box-shadow: 0.5vw 0.5vw 10px rgba(41, 4, 4, 0.863);
         
         .search {
@@ -401,8 +397,6 @@ input[type=number]::-webkit-outer-spin-button {
                 width: 10vh;
                 border-radius: 0.5vw;
                 border: none;
-                // margin-top: 1vh;
-                // border-radius: 50%;
                 color:indianred;
                 font-size: 4vh;
                 text-align: center;
@@ -421,8 +415,6 @@ input[type=number]::-webkit-outer-spin-button {
                 cursor: pointer;
                 margin: -20px 0.8vw;
                 vertical-align: text-bottom;
-
-                // &[value] {margin: auto;}
             }    
 
             &__tooltip {
@@ -456,10 +448,10 @@ input[type=number]::-webkit-outer-spin-button {
                     border-width: 5px;
                     border-style: solid;
                     border-color: transparent transparent black transparent;
-                  }
+                }
             }
-            
         }
+
         &:hover {
 
             .search{
@@ -525,7 +517,6 @@ input[type=number]::-webkit-outer-spin-button {
                 border-bottom: solid;
                 
                 &::after {
-                    // border-left: solid darkred;
                     content: " ";
                     position: absolute;
                     top: 0;
@@ -558,19 +549,14 @@ input[type=number]::-webkit-outer-spin-button {
                     right: 100%;
                     height: 8vh;
                     width: 5vw;
-                    // border-style: solid;
                     background-color: darkred;
                     clip-path: polygon(100% 0, 75% 0, 100% 100%);
                 }
             }
             
-            &__types {                
-                text-align: center;            
-            }
+            &__types {text-align: center;}
             
-            &__abilities {
-                text-align: center;            
-            }
+            &__abilities {text-align: center;}
         }
     
         h3 {text-align: center;}
@@ -586,7 +572,6 @@ input[type=number]::-webkit-outer-spin-button {
                 height: 75vh;
                 width: 100%;
                 background-color: rgb(14, 17, 31);
-                // border-radius: 50%;
                 display: flex;
                 justify-content: center;
                 text-align: center;
@@ -614,8 +599,6 @@ input[type=number]::-webkit-outer-spin-button {
                     &__light {
                         height: 70vmin;
                         width: 115vmin;
-                        // border-radius: 50%;
-                        // border:2px solid red;
                         background-image:
                             linear-gradient(80deg, rgba(255, 252, 93, 0.842), rgba(255, 252, 93, 0.842) 2%, transparent 35% ),
                             linear-gradient(-80deg, rgba(255, 252, 93, 0.842), rgba(255, 252, 93, 0.842) 2%, transparent 35%, );
@@ -664,8 +647,7 @@ input[type=number]::-webkit-outer-spin-button {
         .panel {
             height: 100vh;
             width: 50vw;
-            // border: 1vh solid red;
-        
+
             &--right {
             background-image: repeating-linear-gradient(-45deg, red, red 2%, #000 2.01%, #000 4%);
             z-index: 4;
@@ -674,7 +656,7 @@ input[type=number]::-webkit-outer-spin-button {
         &--left {
             background: palevioletred;               
             background-image: repeating-linear-gradient(45deg, red, red 2%, #000 2.01%, #000 4%);
-                z-index:4;
+            z-index:4;
             }
         }
     }
@@ -684,18 +666,3 @@ input[type=number]::-webkit-outer-spin-button {
         100% {width: 170%; left: -35%}
     }
 }
-
-
-
-// background-image: repeating-linear-gradient(90deg, transparent, transparent 50px,
-// rgba(255, 127, 0, 0.25) 50px, rgba(255, 127, 0, 0.25) 56px, transparent 56px, transparent 63px,
-// rgba(255, 127, 0, 0.25) 63px, rgba(255, 127, 0, 0.25) 69px, transparent 69px, transparent 116px,
-// rgba(255, 206, 0, 0.25) 116px, rgba(255, 206, 0, 0.25) 166px),
-// repeating-linear-gradient(0deg, transparent, transparent 50px, rgba(255, 127, 0, 0.25) 50px,
-// rgba(255, 127, 0, 0.25) 56px, transparent 56px, transparent 63px, rgba(255, 127, 0, 0.25) 63px,
-// rgba(255, 127, 0, 0.25) 69px, transparent 69px, transparent 116px, rgba(255, 206, 0, 0.25) 116px,
-// rgba(255, 206, 0, 0.25) 166px),
-// repeating-linear-gradient(-45deg, transparent, transparent 5px, rgba(143, 77, 63, 0.25) 5px,
-// rgba(143, 77, 63, 0.25) 10px),
-// repeating-linear-gradient(45deg, transparent, transparent 5px, rgba(143, 77, 63, 0.25) 5px,
-// rgba(143, 77, 63, 0.25) 10px);
