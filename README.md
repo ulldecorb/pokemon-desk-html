@@ -1,9 +1,10 @@
 # Pokemon Gallery
-Website build by javascript, html and css. Sourced by pokeapi as api.
+Website build by javascript, html and css. Pokeapi used as api.
 
 ## General info
-This project is simple api call to renderize the data returned into frontend.
-An exercice to made a well-structured architecture provided with SCRUM principles.
+This project is a simple api call to renderize the data returned into frontend.
+An exercice to made a well structured architecture provided with SCRUM principles.
+I took the opportunity to use SASS to power CSS.
 	
 ## Technologies
 Project is created with:
@@ -11,7 +12,7 @@ Project is created with:
 * CSS: 3
 * Javascript: ES6
 * SASS: 1.41.1
-	
+
 ## Setup
 To run this project, run index.html locally on ./pokemon-desk-html:
 
