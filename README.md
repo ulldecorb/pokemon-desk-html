@@ -24,7 +24,7 @@ $ <browser> index.html
 ## Scope of functionalities
 ### Features
 * Nav by 4 and by index over 989 pokemons.
-* Since 5 different visual versions for each pokemon.
+* Up to 5 different visual reference for each pokemon.
 #### To Do:
 * Add style to detail generation's sprites.
 * Show info about pokemon on detail.
