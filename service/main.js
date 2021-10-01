@@ -1,8 +1,4 @@
-// const url = 'https://rickandmortyapi.com/api/character/';
-// src="${data.image}" 
-
 const url = 'https://pokeapi.co/api/v2/pokemon/' ;
-// const pokeBox = document.getElementById('pokemon-item');
 const gallery = document.getElementById('gallery');
 const search = document.getElementById('search');
 let pokemonId = 25;
@@ -76,7 +72,6 @@ async function getPokemonDetail (id) {
     detailElement.setAttribute("class", 'detail' );
     detailElement.setAttribute("id", 'pokemon-detail' );
     detailElement.innerHTML = `
-    
     <section class="detail__box">
         <div class="detail__info">
             <h2 class="info__name">${data.name.toUpperCase()}</h2>
@@ -128,11 +123,6 @@ function removeDetail () {
     document.body.removeChild(document.getElementById("pokemon-detail"));
 }
 
-// function setIndex(index) {
-//     pokemonId = Number.parseInt(index,10);
-//     setPokemonBox(pokemonId);
-// }
-
 function setPokemonByInput(stringId) {
     pokemonId = Number.parseInt(stringId,10);
     setPokemonBox(pokemonId);
@@ -142,7 +132,3 @@ function showGallery() {
     gallery.style.display = "flex";
     search.style.display = "flex";
 }
-// function setPokemonByInput (stringId) {
-//     let numId = Number.parseInt( stringId , 10)
-//     setIndex(numId);
-// }
