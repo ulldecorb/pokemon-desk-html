@@ -512,8 +512,8 @@ input[type=number]::-webkit-outer-spin-button {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
@@ -565,8 +565,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .gallery__pokemon .pokemon__image {
-  width: 30vh;
-  max-height: auto;
+  max-width: 100%;
+  height: auto;
   padding: 10%;
 }
 
