@@ -9,9 +9,8 @@ I took the opportunity to use SASS to power CSS.
 ## Technologies
 Project is created with:
 * HTML: 5
-* CSS: 3
+* CSS: 3 - powered with SASS: 1.41.1
 * Javascript: ES6
-* SASS: 1.41.1
 
 ## Setup
 To run this project, run index.html locally on ./pokemon-desk-html:
