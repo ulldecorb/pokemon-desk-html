@@ -1,5 +1,5 @@
 # Pokemon Gallery
-Website build by javascript, html and css. Pokeapi used as api.
+Website build by javascript, html and css. Pokeapi (pokeapi.co) used as api.
 
 ## General info
 This project is a simple api call to renderize the data returned into frontend.
